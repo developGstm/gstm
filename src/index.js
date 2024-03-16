@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import './styles/main.scss'
 import 'leaflet/dist/leaflet.css';
+import './index.css'
 import { Provider } from 'react-redux'
 import {
   createBrowserRouter,
@@ -13,14 +14,15 @@ import About from './pages/about';
 import Destino from './pages/landingDestino';
 import LandingTour from './pages/landingTour';
 import { store } from './redux/store'
-import CoomingSoon from './pages/coomingSoon'
+import LandingHome from './pages/landingHome'
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>,
-  },  {
+    element: <LandingHome/>,
+  },  
+  {
     path: "/about/:id",
     element: <About/>,
   },
