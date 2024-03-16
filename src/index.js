@@ -20,7 +20,7 @@ import LandingHome from './pages/landingHome'
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <LandingHome/>,
+    element: <Home/>,
   },  
   {
     path: "/about/:id",
