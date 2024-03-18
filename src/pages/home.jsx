@@ -8,20 +8,19 @@ import Header from '../components/header'
 import axios from 'axios'
 import modelDestino from '../scripts/modelDestinos';
 import modelServicios from '../scripts/modelServicios';
-import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 import Moment from 'moment'
 import { useNavigate  } from "react-router-dom";
 import imagen from '../assets/home-slider.jpg'
 import qs from 'qs'
 import plurales from 'plurales';
 import { useSelector } from 'react-redux';
+import Destinations from '../components/destinations';
+import SearchEngine from '../components/searchEngine';
+import Faqs from '../components/faqs';
+import Capacitaciones from '../components/capacitaciones';
 
 const Home = () => {
   const [dataDestinos, setDataDestinos] = useState(false)
-  const [ciudad, setCiudad] = useState('')
-  const [pais, setPais] = useState('')
-  const [typeSelect, setTypeSelect] = useState('atraccion')
-  const [address, setAddress] = useState("")
   const [tipos, setTipos] = useState([])
   const [testimonios, setTestimonios] = useState([])
   const [selectOption, setSelectOption] = useState('Atracción')
@@ -70,12 +69,7 @@ const Home = () => {
     })
   }
 
-  const handleSelectMenu = ( margin, selectItem ) => {
-    const component = document.getElementById('selectMenu')
-    setTypeSelect(selectItem)
 
-    component.style.left = margin
-  }
 
   const handleClick = (type) => {
     const slider = document.querySelector('.Home-sliderCarousel');
@@ -98,30 +92,9 @@ const Home = () => {
     slider.scrollLeft += type === "left" ? -firstElementWidth : firstElementWidth;
   }
 
-  const handleSelect = async (value) => {
-    const result = await geocodeByAddress(value);
-    setAddress(value);
-    result[0]?.address_components.map(address => {
-      const types = address.types;
-      if (types.find(type => type === 'locality')) {
-        let locality = types.find(type => type === 'locality') ? address.long_name : '';
-        setCiudad(locality)
-      } else if (types.find(type => type === 'country')) {
-        let country = types.find(type => type === 'country') ? address.long_name : '';
-        setPais(country)
-      }
-    })
-  }
 
-  const handleSubmitSearch = (e) => {
-    e.preventDefault()
-    const tipos = [typeSelect]
-    let url = new URL(window.location)
-    url.searchParams.set('ciudad',ciudad)
-    url.searchParams.set('pais',pais)
-    url.searchParams.set('tipo',JSON.stringify(tipos))
-    navigate(`/destino${url.search}`)
-  }
+
+
 
   const handleDestino = (value) => {
     let url = new URL(window.location)
@@ -177,73 +150,10 @@ const Home = () => {
             <span>Nuestras tarifas son negociadas directas con el provedor garantizando la tarifa mas baja disponible</span>
             <button className='Home-explore' onClick={() => navigate('/destino')}>Explore Now</button>
           </div>
-          <div className="Home-containerSearch">
-            <div className="Home-SearchWrapper">
-              <div className="Home-SearchHeader">
-                {(tiposServicios && tiposServicios.length > 0) && tiposServicios.map((servicio,index)=> {
-                  const margin = (100 / tiposServicios.length) * index
-                  console.log(servicio?.attributes?.titulo)
-                  return (
-                    <div onClick={() => handleSelectMenu(`${margin}%`, servicio?.attributes?.titulo)}>{servicio?.attributes?.titulo === 'Tour' ? 'tours' : plurales(servicio?.attributes?.titulo)}</div>
-                  )
-                })}
-                <div className='Home-SearchHeaderSelect' style={{width:`${100/tiposServicios.length}%`}} id='selectMenu'></div>
-              </div>
-              <form className="Home-SearchBody" onSubmit={(e) => handleSubmitSearch(e)}>
-                <div className='Home-SearchInputContainer'>
-                  <i className="fa-light fa-location-dot"></i>
-                  <div className='Home-SearchInput'>
-                    <label htmlFor="">Locación</label>
-                    <PlacesAutocomplete value={ address } onChange={setAddress} onSelect={handleSelect}>
-                      {({getInputProps, suggestions, getSuggestionItemProps, loading}) => (
-                      <div>
-                        <input {...getInputProps({placeholder:'¿A dónde vas?'})} required={true}/>
-
-                        {(suggestions && suggestions.length > 0) && <div className='suggestionsContainer'>
-                          {loading ? <div>...cargando</div> : null }
-                          {suggestions.map(suggestion => {
-                            const style = {
-                              backgroundColor: suggestion.active ? '#e3e3e6' : "#fff"
-                            }
-
-                            return (
-                              <div {...getSuggestionItemProps(suggestion, { style })}>
-                                {suggestion?.description}
-                              </div>
-                            )
-                          })}
-                        </div>}
-                      </div>
-                      )}
-                    </PlacesAutocomplete>
-                  </div>
-                </div>
-                <div className='Home-SearchInputContainer'>
-                  <i className="fa-light fa-calendar"></i>
-                  <div className='Home-SearchInput'>
-                    <label htmlFor="">¿Cuando?</label>
-                    <input type="date" min={Moment().format('YYYY-MM-DD')} required={true}/>
-                  </div>
-                </div>
-                <div className='Home-SearchInputContainer'>
-                  <i className="fa-light fa-user-vneck"></i>
-                  <div className='Home-SearchInput'>
-                    <label htmlFor="">Personas</label>
-                    <input type="number" placeholder='¿Cuantos van?' required={true} />
-                  </div>
-                </div>
-                <div className='Home-SearchInputContainer'>
-                  <button>
-                      <span>Buscar</span>
-                     <i className="fa-light fa-magnifying-glass"></i>
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
+          {/* <SearchEngine tiposServicios={tiposServicios} /> */}
         </div>
       </section>
-      <section className='Home-section' id="destinos">
+      {/* <section className='Home-section' id="destinos">
         <div className="Home-wrapper Home-wrapperDescubre">
           <h1>Descubre nuestros destinos</h1>
           <div className='Home-sliderDescubre'>
@@ -266,7 +176,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <section className='Home-section'>
         <div className="Home-wrapper Home-wrapperBeneficios">
           <h1 className='Home-titleGrupos'>Vea algunos beneficios de unirse a nosotros</h1>
@@ -309,6 +219,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <Destinations dataDestinos={dataDestinos}/>
       <section className='Home-section' id="servicios">
         <div className="Home-wrapper Home-DestinationWrapper">
           <div className='Home-destinationsHeader'>
@@ -357,6 +268,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <Capacitaciones/>
       {/*<section className='Home-section Home-sectionWork'>
         <div className="Home-wrapper Home-ItWork">
           <div className='Home-ItWorkHeader'>
