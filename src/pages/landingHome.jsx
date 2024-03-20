@@ -17,6 +17,8 @@ import helicoptero from '../assets/helicoptero.png'
 import deportes from '../assets/deportes.png'
 import conciertos from '../assets/conciertos.png'
 import barco from '../assets/barco.png'
+import disney from '../assets/disney.png'
+import universal from '../assets/universal.png'
 import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
 
 const products = [
@@ -357,6 +359,85 @@ function LandingHome(props) {
             Contamos con una gama de seleccionadas navieras, si no encuentras lo que estás buscando, contacta a nuestro servicio al cliente, ellos te ayudarán a seleccionar el crucero adecuado para ti.
             </p>
           </div>
+        </div>
+      </section>
+      <section>
+        <div className="mx-auto max-w-7xl lg:px-8 flex item-center justify-between flex-col lg:flex-row">
+          <div className='w-100 lg:w-1/2 flex flex-col justify-center'>
+            <h1 className="text-3xl font-extrabold sm:text-5xl">
+              <span className='text-base block text-[#3abb70]'>El maravilloso mundo de</span>
+              Disney
+            </h1>
+            <p className="w-auto mt-4 text-1xl lg:max-w-lg">
+            Siempre has querido vender Disney pero no te habías animado, es hora de que te unas al mundo de la magia y experimentes este increíble producto, nosotros te llevamos de la mano para que te conviertas en un experto.
+            </p>
+          </div>
+          <div className='w-100 flex item-center justify-center lg:w-1/2 '>
+            <img className="w-auto" src={disney} alt="" />
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="mx-auto max-w-7xl lg:px-8 flex item-center justify-between flex-col lg:flex-row">
+          <div className='w-100 flex item-center justify-center lg:w-1/2 '>
+            <img className="w-auto" src={universal} alt="" />
+          </div>
+          <div className='w-100 lg:w-1/2 flex flex-col justify-center'>
+            <h1 className="text-3xl font-extrabold sm:text-5xl">
+              <span className='text-base block text-[#3abb70]'>Estudios</span>
+              Universal 
+            </h1>
+            <p className="w-auto mt-4 text-1xl lg:max-w-lg">
+            El parque temático que no puedes dejar de tener en tu lista de imperdibles, todos los tickets los podrás encontrar con nosotros, así como su selección de hoteles.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className='py-10'>
+        <h1 className='mx-auto max-w-7xl px-6 lg:px-8 text-3xl font-extrabold relative'>Parques temáticos</h1>
+        <div className="mx-auto max-w-7xl p-6 lg:px-8 flex item-center justify-between flex-col lg:flex-row">
+          Mapa con lista de parques temáticos en el mundo.
+        </div>
+      </section>
+      <section id="destinos"  className='container mx-auto lg:py-10'>
+        <h1 className='mx-auto max-w-7xl px-6 lg:px-8 text-3xl font-extrabold relative'>Te enseñamos a viajar</h1>
+        <div className='mx-auto max-w-7xl p-6 lg:px-8 grid lg:grid-cols-3 gap-4'> 
+          <article className='pt-80 pb-8 px-8 rounded-2xl bg-red-50 overflow-hidden flex flex-col justify-end relative isolate'>
+            <img className='w-full h-full object-cover absolute -z-10 inset-0'
+            src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80" alt="" />
+            <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#2e8b88]"></div>
+            <div className="flex items-center justify-center gap-1 overflow-hiden flex-wrap text-sm text-white leading-7">
+              <span>Mar 16, 2024</span>
+              <div className='flex items-center gap-x-2.5'>
+                
+              </div>
+            </div>
+            <h3 className='text-white font-semibold text-lg'>Boost your conversion rate</h3>
+          </article>
+          <article className='pt-80 pb-8 px-8 rounded-2xl bg-red-50 overflow-hidden flex flex-col justify-end relative isolate'>
+            <img className='w-full h-full object-cover absolute -z-10 inset-0'
+            src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80" alt="" />
+            <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#2e8b88]"></div>
+            <div className="flex items-center justify-center gap-1 overflow-hiden flex-wrap text-sm text-white leading-7">
+              <span>Mar 16, 2024</span>
+              <div className='flex items-center gap-x-2.5'>
+                
+              </div>
+            </div>
+            <h3 className='text-white font-semibold text-lg'>Boost your conversion rate</h3>
+          </article>
+          <article className='pt-80 pb-8 px-8 rounded-2xl bg-red-50 overflow-hidden flex flex-col justify-end relative isolate'>
+            <img className='w-full h-full object-cover absolute -z-10 inset-0'
+            src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80" alt="" />
+            <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#2e8b88]"></div>
+            <div className="flex items-center justify-center gap-1 overflow-hiden flex-wrap text-sm text-white leading-7">
+              <span>Mar 16, 2024</span>
+              <div className='flex items-center gap-x-2.5'>
+                
+              </div>
+            </div>
+            <h3 className='text-white font-semibold text-lg'>Boost your conversion rate</h3>
+          </article>
         </div>
       </section>
     </div>

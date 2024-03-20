@@ -33,20 +33,18 @@ const Destinations = ({dataDestinos}) => {
           </ul>
         </div>
       </div>
-        <div className='overflow-hidden  gap-3 lg:gap-3 sm:columns-2 lg:columns-3 px-10 [&>div:not(:first-child)]:mt-3 lg:[&>div:not(:first-child)]:mt-3'> 
-          {(dataDestinos && dataDestinos.length > 0) && dataDestinos.map(item => {
-                return (
-                  <div className="w-full lg:w-50 relative h-200 rounded-lg bg-gray-200 overflow-hidden shadow " onClick={() => handleDestino(item)}>
-                    <img className='w-full h-full' src={item.details?.photos[0]?.url} alt="" />
-                    <div className=' top-0 absolute rounded-br-lg text-white w-40 bg-yellow-400 text-center'>
-                      <h3>{ item?.locality }</h3>
-                    </div>
-                  </div>
-                  )
-              })}
-        </div>
-        
-
+      <div className='overflow-hidden  gap-3 lg:gap-3 sm:columns-2 lg:columns-3 px-10 [&>div:not(:first-child)]:mt-3 lg:[&>div:not(:first-child)]:mt-3'> 
+        {(dataDestinos && dataDestinos.length > 0) && dataDestinos.map(item => {
+          return (
+            <div className="w-full lg:w-50 relative h-200 rounded-lg bg-gray-200 overflow-hidden shadow " onClick={() => handleDestino(item)}>
+              <img className='w-full h-full' src={item.details?.photos[0]?.url} alt="" />
+              <div className=' top-0 absolute rounded-br-lg text-white w-40 bg-yellow-400 text-center'>
+                <h3>{ item?.locality }</h3>
+              </div>
+            </div>
+            )
+        })}
+      </div>
     </section>
   )
 }

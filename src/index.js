@@ -23,6 +23,10 @@ const router = createBrowserRouter([
     element: <LandingHome/>,
   },  
   {
+    path:'/home',
+    element:<Home/>
+  },
+  {
     path: "/about/:id",
     element: <About/>,
   },
