@@ -65,7 +65,7 @@ const Footer = () => {
           </div>*/}
         </div>
         <div className='footer-second'>
-        <div>©2023 by<a href="https://axioma.network/" target='_blank'> Axioma</a>, All rights reserved</div>
+        <div>©2023 by<a href="https://axioma.network/" target='_blank'> Global Supply Travel Market</a>, All rights reserved</div>
           <div>
             <a href="#home">
               <h1>Scroll To Top</h1> 

@@ -18,11 +18,11 @@ import Destinations from '../components/destinations';
 import SearchEngine from '../components/searchEngine';
 import Faqs from '../components/faqs';
 import Capacitaciones from '../components/capacitaciones';
+import SeguroViajero from '../components/SeguroViajero';
 
 const Home = () => {
   const [dataDestinos, setDataDestinos] = useState(false)
   const [tipos, setTipos] = useState([])
-  const [testimonios, setTestimonios] = useState([])
   const [selectOption, setSelectOption] = useState('Atracción')
   const [dataServicios, setDataServicios] = useState([])
   const [tiposServicios, setTiposServicios] = useState([])
@@ -45,10 +45,6 @@ const Home = () => {
     axios.get('https://cms-l4tiq.ondigitalocean.app/api/tipo-servicios')
     .then(response => {
       setTiposServicios(response.data.data)
-    })
-    axios.get('https://cms-l4tiq.ondigitalocean.app/api/testimonios')
-    .then(response => {
-      setTestimonios(response.data.data)
     })
   }, []);
 
@@ -85,12 +81,7 @@ const Home = () => {
     slider.scrollLeft += type === "left" ? -firstElementWidth : firstElementWidth;
   }
 
-  const handleClickTestimonails = (type) => {
-    const slider = document.querySelector('.Home-sliderCarouselTestimonials');
-    const firsElement = document.querySelectorAll('.Home-sliderTestimonialsContainer')[0];
-    const firstElementWidth = firsElement.clientWidth;
-    slider.scrollLeft += type === "left" ? -firstElementWidth : firstElementWidth;
-  }
+
 
 
 
@@ -220,7 +211,8 @@ const Home = () => {
         </div>
       </section>
       <Destinations dataDestinos={dataDestinos}/>
-      <section className='Home-section' id="servicios">
+      <SeguroViajero/>
+      {/*<section className='Home-section' id="servicios">
         <div className="Home-wrapper Home-DestinationWrapper">
           <div className='Home-destinationsHeader'>
             <div>
@@ -267,7 +259,7 @@ const Home = () => {
 
           </div>
         </div>
-      </section>
+          </section>*/}
       <Capacitaciones/>
       {/*<section className='Home-section Home-sectionWork'>
         <div className="Home-wrapper Home-ItWork">
@@ -382,51 +374,7 @@ const Home = () => {
           </div>
         </div>
       </section> */}
-      {
-        /*
-        <section className='Home-section Home-sectionWork'>
-        <div className="Home-wrapper Home-TopDeals">
-        <div className='Home-TopDealsHeader'>
-          <div className='Home-TopDealsTitle Home-TitleTestimonios'>
-            <h1>Testimonios</h1>
-            <span>Que dicen de nosotros</span>
-          </div>
-          <div className='Home-TopDealsButtons Home-TitleTestimoniosButton'>
-            <div onClick={() => handleClickTestimonails('left')}>
-              <i className="fa-sharp fa-light fa-chevron-left"></i>
-            </div>
-            <div onClick={() => handleClickTestimonails('right')}>
-              <i className="fa-sharp fa-light fa-chevron-right"></i>
-            </div>
-          </div>
-        </div>
-        <div className='Home-sliderDeals'>
-          <div className="Home-sliderCarouselTestimonials">
-            {(testimonios && testimonios.length > 0) && testimonios.map(item => {
-              return (
-                <div className='Home-sliderTestimonialsContainer'>
-                <div className='Home-sliderTestimonailsWrapper' key={item.id}>
-                <div>
-                  <div className='Home-sliderTestimonailsIcon'>😊</div>
-                </div>
-                <div>
-                  <span>
-                    {item.attributes.testimonio}
-                  </span>
-                </div>
-                <div>
-                  <h1>{item.attributes.autor}</h1>
-                </div>
-              </div>
-              </div>
-              )
-            })}
-          </div>
-        </div>
-        </div>
-      </section>
-      */
-      }
+      <Faqs/>
       <section className='Home-section Home-NewsLatter'>
         <form className="Home-wrapper Home-NewsLatterContainer" onSubmit={(e) => handleNewsLatter(e)}>
           <div className='Home-NewsLatterHeader' >

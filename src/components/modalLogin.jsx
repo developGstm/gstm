@@ -4,12 +4,14 @@ import axios from 'axios'
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../redux/userSlice'
 
+
 const ModalLogin = ({ activeModal, closeModal }) => {
   const [formLogin, setFormLogin] = useState({})
   const [formSignUp, setSignUp] = useState({})
   const dispatch = useDispatch();
   const [typeForm, setTypeFaorm] = useState(true)
   const [registerSuccess, setRegisterSuccess] = useState(false)
+  const [isUserCorrect, setIsUserCorrect] = useState(true);
 
   const handleLogin = (e) => {
     e.preventDefault()
@@ -18,6 +20,8 @@ const ModalLogin = ({ activeModal, closeModal }) => {
       const data = response.data.user ? response.data.user : false
       if (data) {
         dispatch(loginUser({email:data.email, password:'', activeLogin: true}))
+        console.log(data);
+        data.confirmed = true ?  window.location = '/home' :  setIsUserCorrect(false)
         closeModal(false);
       } else {
         closeModal(false);
@@ -78,6 +82,7 @@ const ModalLogin = ({ activeModal, closeModal }) => {
                   Inciar sesion
                 </button>
               </div>
+              { isUserCorrect ? '' : <span className=' text-center text-red-600'> Usuario o contraseña inconrrectas </span> }
               <div className='ModalLogin-Registrate'>
                 <span>¿Aun no tienes cuenta?</span> <span onClick={() => setTypeFaorm(false)}>Registrate</span>
               </div>
