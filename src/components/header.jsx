@@ -18,9 +18,6 @@ const Header = () => {
     axios.get('https://cms-l4tiq.ondigitalocean.app/api/page-externas')
     .then(response => {
       const data =response?.data?.data; 
-      data.forEach(element => {
-        console.log(element)
-      });
       setUrl(data);
     })
 
@@ -37,7 +34,8 @@ const Header = () => {
   })
 
   const handleLogin = () => {
-    dispatch(logoutUser())
+    dispatch(logoutUser());
+    window.location = '/';
   }
 
   return (
@@ -52,65 +50,15 @@ const Header = () => {
             <a href="#destinos"><li className='Header-li'>Destinos</li></a>
             <a href="#servicios"><li className='Header-li'>Servicios</li></a>
             <a href="#footer"><li className='Header-li'>Contacto</li></a>
-            {
-              url?.map ( item =>(
-                <a key={item.attributes.Name} href={item.attributes.url} target='_blank'>
-                  <li className='Header-li'>
-                    {item.attributes.Name}
-                  </li>
-                </a>
-                    )
-                  )       
-            }
-            { user.activeLogin ? 
               <div className='Header-logout logout-mobile Header-li' onClick={() => handleLogin()}>
                 <span>{user.email}</span>
                 <i className="fa-duotone fa-right-from-bracket"></i>
               </div>
-            
-            : 
-              <div className='Header-Login login-mobile Header-li'>
-                <span onClick={()=> setActiveLogin(true)}>
-                  Iniciar Sesion
-                </span>
-              </div>
-              
-            }
-            { user.activeLogin ? 
-            <></>
-            : 
-              <div className='login-mobile Header-li'>
-                <span onClick={()=> setActiveLogin(true)}>
-                  Registrate
-                </span>
-              </div>
-              
-            }
 
-        { user.activeLogin ? 
           <div className='Header-logout logout-desktop Header-li' onClick={() => handleLogin()}>
             <span>{user.email}</span>
             <i className="fa-duotone fa-right-from-bracket"></i>
           </div>
-         
-        : 
-          <div className='Header-Login Header-li'>
-            <span onClick={()=> setActiveLogin(true)}>
-              Iniciar Sesion
-            </span>
-          </div>
-        }
-    
-          { user.activeLogin ? 
-          <></>
-         
-        : 
-          <div className='Header-Login Header-li'>
-            <span onClick={()=> setActiveLogin(true)}>
-            Registrate
-            </span>
-          </div>
-        }
                   </ul>
         </div>
         <div className={ buttonClose } onClick={ () => setActiveMenu(!activeMenu) }>

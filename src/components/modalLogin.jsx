@@ -20,8 +20,6 @@ const ModalLogin = ({ activeModal, closeModal }) => {
       const data = response.data.user ? response.data.user : false
       if (data) {
         dispatch(loginUser({email:data.email, password:'', activeLogin: true}))
-        console.log(data);
-        data.confirmed = true ?  window.location = '/home' :  setIsUserCorrect(false)
         closeModal(false);
       } else {
         closeModal(false);
@@ -45,6 +43,7 @@ const ModalLogin = ({ activeModal, closeModal }) => {
           setRegisterSuccess(false)
           setTypeFaorm(true)
           closeModal(false);
+          window.location = '/home';
         }, 1000);
 
       } else {
@@ -62,7 +61,7 @@ const ModalLogin = ({ activeModal, closeModal }) => {
   if (activeModal) {
     if (typeForm) {
       return (
-        <div className='ModalLogin-Wrapper'>
+        <div className='ModalLogin-Wrapper z-50'>
           <div className="ModalLogin-Container">
             <div className="ModalLogin-close">
               <i className="fa-regular fa-xmark" onClick={() =>  closeModalHandle()}></i>
@@ -79,7 +78,7 @@ const ModalLogin = ({ activeModal, closeModal }) => {
               </div>
               <div>
                 <button>
-                  Inciar sesion
+                  Iniciar sesion
                 </button>
               </div>
               { isUserCorrect ? '' : <span className=' text-center text-red-600'> Usuario o contraseña inconrrectas </span> }

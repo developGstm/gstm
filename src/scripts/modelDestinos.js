@@ -1,14 +1,12 @@
 function modelDestino(data) {
   const locality = data?.data?.map(item => {
     const itemJson = JSON.parse(item?.attributes?.locacion);
-    const numberTrips = data?.data?.filter(travel => itemJson?.locality === JSON.parse(travel?.attributes?.locacion)?.locality)
-    if (itemJson?.locality === undefined) {
-      console.log(item)
+    if (item?.attributes?.locacion !== null) {
+      return [itemJson?.locality,{...itemJson, portada: item?.attributes?.portada?.data?.attributes?.url}]
     }
-    return [itemJson?.locality,{...itemJson, numberTrips: numberTrips.length}]
   })
-
-  const localityMap = new Map(locality);
+  const localityFilter = locality.filter(item => item !== undefined)
+  const localityMap = new Map(localityFilter);
   const filterLocality = [...localityMap.values()]
   return filterLocality;
 }

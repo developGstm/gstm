@@ -15,3 +15,5 @@ export const store = configureStore({
     user: persistedUser,
   }
 })
+
+export const persistore = persistStore( store );

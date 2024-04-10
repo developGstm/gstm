@@ -20,6 +20,7 @@ const userSlice = createSlice({
       state.email = '';
       state.password = '';
       state.activeLogin = false;
+      state.login = null
     }
   }
 })

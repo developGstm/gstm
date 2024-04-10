@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate  } from "react-router-dom";
 
 const Destinations = ({dataDestinos}) => {
-
+  console.log(dataDestinos)
   const navigate = useNavigate();
   const handleDestino = (value) => {
     let url = new URL(window.location)
@@ -37,7 +37,7 @@ const Destinations = ({dataDestinos}) => {
         {(dataDestinos && dataDestinos.length > 0) && dataDestinos.map(item => {
           return (
             <div className="w-full lg:w-50 relative h-200 rounded-lg bg-gray-200 overflow-hidden shadow " onClick={() => handleDestino(item)}>
-              <img className='w-full h-full' src={item.details?.photos[0]?.url} alt="" />
+              <img className='w-full h-full' src={item?.portada} alt="" />
               <div className=' top-0 absolute rounded-br-lg text-white w-40 bg-yellow-400 text-center'>
                 <h3>{ item?.locality }</h3>
               </div>

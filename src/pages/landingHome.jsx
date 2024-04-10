@@ -111,10 +111,10 @@ function LandingHome(props) {
   const [blogs,setBlog] = useState();
 
   useEffect(() => {
-    axios.get('https://cms-l4tiq.ondigitalocean.app/api/blogs')
+    axios.get('https://cms-l4tiq.ondigitalocean.app/api/blogs?populate=*')    
     .then(response => {
+      console.log(response.data)
       setBlog(response.data.data)
-      console.log(blogs)
     })
   }, []);
 
@@ -491,7 +491,7 @@ function LandingHome(props) {
             <a href={ item.attributes.url }>
             <article className='pt-80 pb-8 px-8 rounded-2xl bg-red-50 overflow-hidden flex flex-col justify-end relative isolate'>
               <img className='w-full h-full object-cover absolute -z-10 inset-0'
-              src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80" alt="" />
+              src={ item.attributes.img.data.attributes.url } alt="" />
               <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#2e8b88]"></div>
               <div className="flex items-center justify-center gap-1 overflow-hiden flex-wrap text-sm text-white leading-7">
                 <span>{item.attributes.fecha}</span>
@@ -504,31 +504,6 @@ function LandingHome(props) {
             </a>
             )
         })}
-
-          <article className='pt-80 pb-8 px-8 rounded-2xl bg-red-50 overflow-hidden flex flex-col justify-end relative isolate'>
-            <img className='w-full h-full object-cover absolute -z-10 inset-0'
-            src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80" alt="" />
-            <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#2e8b88]"></div>
-            <div className="flex items-center justify-center gap-1 overflow-hiden flex-wrap text-sm text-white leading-7">
-              <span>Mar 16, 2024</span>
-              <div className='flex items-center gap-x-2.5'>
-                
-              </div>
-            </div>
-            <h3 className='text-white font-semibold text-lg'>Boost your conversion rate</h3>
-          </article>
-          <article className='pt-80 pb-8 px-8 rounded-2xl bg-red-50 overflow-hidden flex flex-col justify-end relative isolate'>
-            <img className='w-full h-full object-cover absolute -z-10 inset-0'
-            src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80" alt="" />
-            <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#2e8b88]"></div>
-            <div className="flex items-center justify-center gap-1 overflow-hiden flex-wrap text-sm text-white leading-7">
-              <span>Mar 16, 2024</span>
-              <div className='flex items-center gap-x-2.5'>
-                
-              </div>
-            </div>
-            <h3 className='text-white font-semibold text-lg'>Boost your conversion rate</h3>
-          </article>
         </div>
       </section>
       <Footer/>

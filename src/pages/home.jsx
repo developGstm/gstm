@@ -18,7 +18,9 @@ import Destinations from '../components/destinations';
 import SearchEngine from '../components/searchEngine';
 import Faqs from '../components/faqs';
 import Capacitaciones from '../components/capacitaciones';
-import SeguroViajero from '../components/SeguroViajero';
+import CarruselCards from '../components/carruselCards';
+
+
 
 const Home = () => {
   const [dataDestinos, setDataDestinos] = useState(false)
@@ -30,6 +32,33 @@ const Home = () => {
   const user = useSelector((state) => state.user)
   const navigate = useNavigate();
   
+  const cards = [{
+    'img':'https://viajeronomada.com/wp-content/uploads/2022/06/dondealojarseenbali.jpg',
+    'title': 'Verano en Bali' ,
+    'country':'Indonesia',
+    'price':' $2,500 ',
+  },
+  {
+    'img':'https://cdn.aarp.net/content/dam/aarp/travel/Domestic/2021/12/1140-oahu-hero.jpg',
+    'title': 'Hawaii' ,
+    'country':'USA',
+    'price':' $3,500 ',
+  },
+  {
+    'img':'https://viajeronomada.com/wp-content/uploads/2022/06/dondealojarseenbali.jpg',
+    'title': 'Verano en Bali' ,
+    'country':'Indonesia',
+    'price':' $2,500 ',
+  },
+  {
+    'img':'https://cdn.aarp.net/content/dam/aarp/travel/Domestic/2021/12/1140-oahu-hero.jpg',
+    'title': 'Hawaii' ,
+    'country':'USA',
+    'price':' $3,500 ',
+  }
+  
+]
+
   useEffect(() => {
     axios.get('https://cms-l4tiq.ondigitalocean.app/api/servicios?populate=*&')
     .then(response => {
@@ -211,7 +240,13 @@ const Home = () => {
         </div>
       </section>
       <Destinations dataDestinos={dataDestinos}/>
-      <SeguroViajero/>
+      <section className='container mx-auto p-10 lg:p-20'>
+        <div className='w-full mb-2 text-center lg:text-left lg:mb-0 lg:w-1/2 '>
+          <h3 className=' text-4xl lg:text-5xl font-bold'>Descubre los Tours</h3>
+          <span className='text-2xl text-green-400 font-semibold'>El destino que busques lo tenemos a tu alcance</span>
+        </div>
+        <CarruselCards data={ cards } url='/' />
+      </section>
       {/*<section className='Home-section' id="servicios">
         <div className="Home-wrapper Home-DestinationWrapper">
           <div className='Home-destinationsHeader'>
