@@ -153,32 +153,9 @@ function LandingHome(props) {
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <Popover.Group className="hidden lg:flex lg:gap-x-12">
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-              Nosotros
-            </a>
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-              Destinos
-            </a>
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Experiencias
-            </a>
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-              Disney
-            </a>
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-              Universal
-            </a>
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-              Parques tematicos
-            </a>
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-              Blog de viaje
-            </a>
-          </Popover.Group>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <a onClick={() => handleModal(true)} href="#" className="text-sm font-semibold leading-6 text-gray-900">
-              Log In / Sign Up <span aria-hidden="true">&rarr;</span>
+              Inciar sesion / Registarse <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
         </nav>
@@ -186,13 +163,13 @@ function LandingHome(props) {
           <div className="fixed inset-0 z-5" />
           <Dialog.Panel className="fixed inset-y-0 right-0 z-5 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
+              <button className="-m-1.5 p-1.5">
                 <img
                   className="w-16"
                   src={ logo }
                   alt=""
                 />
-              </a>
+              </button>
               <button
                 type="button"
                 className="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -204,37 +181,13 @@ function LandingHome(props) {
             </div>
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
-                <div className="space-y-2 py-6">
-                <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                  Nosotros
-                </a>
-                <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                  Destinos
-                </a>
-                <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                Experiencias
-                </a>
-                <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                  Disney
-                </a>
-                <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                  Universal
-                </a>
-                <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                  Parques tematicos
-                </a>
-                <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                  Blog de viaje
-                </a>
-                </div>
                 <div className="py-6">
-                  <a
+                  <button
                     onClick={() => handleModal(true)}
-                    href="#"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
-                    Log in
-                  </a>
+                    Inciar sesion / Registarse
+                  </button>
                 </div>
               </div>
             </div>
@@ -284,6 +237,21 @@ function LandingHome(props) {
               Responsabilidad social apoyando a la economía local y creando conciencia ambiental en el viajero.
             <br/>Innovación: Nuestra tecnología hará que la experiencia de reserva sea única para ti y tu cliente, con una comunicación clara y transparente desde el principio.
             </span>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="mx-auto max-w-7xl p-6 lg:px-8 flex flex-col justify-center h-full gap-5">
+          <div className="relative">
+            <div className='absolute z-20 top-0 left-0 h-full w-full flex justify-end md:justify-center items-end p-5 md:pr-10 flex-col gap-5'>
+              <div className='flex flex-col'>
+                <h1 className='text-3xl md:text-5xl text-white font-bold text-center'>Disfruta de los mejores precio</h1>
+                <span className='text-base md:text-right text-center'>Incia sesion o Registrate y obten todo nuestro calago</span>
+              </div>
+              <button onClick={()=> handleModal(true)} className='bg-green-400 rounded p-3 w-full md:w-1/3'>Inicia Sesion / Registrate</button>
+            </div>
+            <div className='bg-black absolute top-0 left-0 w-full h-full rounded-lg z-10  md:hidden opacity-10'></div>
+            <img src="./assets/login.jpg" alt="" className='h-96 rounded-lg object-left md:object-cover'/>
           </div>
         </div>
       </section>

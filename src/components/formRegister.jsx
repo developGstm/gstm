@@ -100,17 +100,7 @@ const FormRegister = ({ codigo }) => {
         placeHolder='Password' 
         type='password'
         />
-        { 
-        codigo  && 
-            <Input 
-            nombre='codigo_descuento' 
-            funcion={handleInput} 
-            valor={ codigo ? codigo : dataUser?.info_user.descuentos[0].codigo} 
-            requerido={true} 
-            placeHolder='Codigo de descuento' 
-            type='text'
-            /> 
-         }
+        <label className="p-2 border rounded-lg w-full border-[#081358] mb-5 flex items-center gap-3"><input type="checkbox" required="true" onInvalid={(e) => e.target.setCustomValidity('Acepta nuestros terminos y condiciones')}/><span className="font-semibold">Acepto <a href={`${window.location}assets/TerminosyCondiciones.pdf`} className="border-b"  target="_blank">Terminos y Condiciones</a></span></label>
         <button type="submit" className='bg-green-400 rounded p-3' >Registrarse</button>
       </form>
     </div>
