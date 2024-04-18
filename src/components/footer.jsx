@@ -29,6 +29,7 @@ const Footer = () => {
                 <a href="https://www.instagram.com/globalsuppliertravelmarket/" target='_blank'><i class="fa-brands fa-instagram"></i></a>
               </div>
             </div>
+            <a href={`${window.location}assets/TerminosyCondiciones.pdf`} className="border-b font-bold"  target="_blank">Terminos y Condiciones</a>
           </div>
           {/* <div className='footer-item'>
             <h1>Menu</h1>

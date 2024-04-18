@@ -420,14 +420,15 @@ function LandingHome(props) {
         {(blogs && blogs.length > 0) && blogs.map(item => {
           return (
             <a href={ item.attributes.url }>
-            <article className='pt-80 pb-8 px-8 rounded-2xl bg-red-50 overflow-hidden flex flex-col justify-end relative isolate'>
+            <article className='h-full pt-80 pb-8 px-8 rounded-2xl bg-red-50 overflow-hidden flex flex-col justify-stretch items-stretch relative '>
               <img className='w-full h-full object-cover absolute -z-5 inset-0'
               src={ item.attributes.img.data.attributes.url } alt="" />
-              <div className="absolute inset-0 -z-5 bg-gradient-to-t from-[#2e8b88]"></div>
+              <div className="absolute inset-0 -z-5 bg-gradient-to-t from-[#3abb70]"></div>
               <div className="flex items-center justify-center gap-1 overflow-hiden flex-wrap text-sm text-white leading-7 z-30">
                 <span>{item?.attributes?.fecha}</span>
-                <div className='flex items-center gap-x-2.5'>
-                  asa
+                <div className='flex items-center gap-x-2.5 flex-col'>
+                  <h2 className='text-xl font-semibold'>{item?.attributes?.titulo}</h2>
+                  <span className='text-sm'>{item?.attributes?.descripcion}</span>
                 </div>
               </div>
               <h3 className='text-white font-semibold text-lg'>{item.attributes.titulo}</h3>
