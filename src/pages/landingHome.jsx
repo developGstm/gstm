@@ -294,26 +294,46 @@ function LandingHome(props) {
         <div className='flex items-center justify-center'><img className='w-52' src={ us } alt="" /></div>
         </div>
       </section>
-      <section className="py-10 section-map">
-      <h1 className='mx-auto max-w-7xl px-6 lg:px-8 text-3xl font-extrabold relative'>Experiencias en cualquier lugar del mundo</h1>
-        <div className="mx-auto lg:max-w-5xl px-6 lg:px-8">
-        <ComposableMap>
-          <Geographies geography="/features.json">
-            {({ geographies }) =>
-              geographies.map((geo) => (
-                <Geography key={geo.rsmKey} geography={geo} />
-              ))
-            }
-          </Geographies>
-          {cordenadas.map(item=> {
-            const random = Math.floor((Math.random() * (4 - 2 + 1)) + 2)
-            return (
-              <Marker coordinates={[item.lon, item.lat]}>
-                <circle r={2} fill="#3abb70" />
-              </Marker>
-            )
-          })}
-        </ComposableMap>
+      <section className='relative mb-20'>
+        <div className="absolute w-full h-full z-10">
+          <div className="mx-auto max-w-7xl p-6 lg:px-8 flex flex-col justify-center h-full gap-5">
+            <div className='lg:w-1/2'><h1 className='text-4xl md:text-5xl font-extrabold relative'>Experiencias en cualquier lugar del <span className='text-[#3abb70]'>mundo</span></h1></div>
+            <div className="grid grid-cols-1 gap-10 lg:gap-2 lg:grid-cols-3 w-full lg:w-1/2 text-black">
+              <div className='flex flex-col text-center gap-3'>
+                <h1 className='text-5xl font-extrabold'>20+</h1>
+                <span className='text-sm font-medium'>Años de Experiencia</span>
+              </div>
+              <div className='flex flex-col text-center gap-3'>
+                <h1 className='text-5xl font-extrabold'>10M+</h1>
+                <span className='text-sm font-medium'>Viajeros Felices</span>
+              </div>
+              <div className='flex flex-col text-center gap-3'>
+                <h1 className='text-5xl font-extrabold'>100+</h1>
+                <span className='text-sm font-medium'>Destinos Unicos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-end min-h-screen items-end">
+          <div className='section-map w-full lg:w-1/2 relative'>
+            <ComposableMap>
+              <Geographies geography="/features.json">
+                {({ geographies }) =>
+                  geographies.map((geo) => (
+                    <Geography key={geo.rsmKey} geography={geo} />
+                  ))
+                }
+              </Geographies>
+              {cordenadas.map(item=> {
+                return (
+                  <Marker coordinates={[item.lon, item.lat]}>
+                    <circle r={2} fill="#ffd603" />
+                  </Marker>
+                )
+              })}
+            </ComposableMap>
+            <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-t from-[#fff] from-10%"></div>
+          </div>
         </div>
       </section>
       <section className=' px-8'>
