@@ -1,49 +1,58 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
+import moment from 'moment'
+import Input from './input'
 
 const ContainerPrice = ({trip}) => {
+  const [cantidad, setCantidad] = useState({})
   const user = useSelector((state) => state.user)
+  
+  const handeWhatsApp = (e, index, tarifa) => {
+    e.preventDefault()
+    const text = `Hola soy ${user?.usuario?.nombre} quiero reservar mi paquete ${trip.titulo}%0A *Tarifa: ${tarifa.titulo}%0A *Precio: ${tarifa.precio}${trip.moneda}/${trip.unidad}%0A *Numero de Personas: ${cantidad[`cantidad${index}`]}`
+    window.open(`https://wa.me/17024085453?text=${text.replace(/ /g, "%20")}`)
+  }
+
+  const handleInput = (name,value) => {
+    setCantidad({...cantidad, [name]: value})
+  }
 
   return (
-    <div className='containerPrice'>
+    <div className='w-full'>
       <div className='containerPrice-card'>
-        { user.activeLogin ? 
-          <div className='containerPrice-amount'>
-            ${trip?.precio && trip?.precio} {trip?.moneda?.data?.attributes?.titulo && trip?.moneda.data.attributes.titulo}<span>/{trip?.unidad?.data?.attributes?.titulo && trip?.unidad?.data?.attributes?.titulo}</span>
-          </div>
-          : 
-          <div className='containerPrice-amount'>
-            <span>Inicia sesión para ver nuestros precios</span>
-          </div>
-        }
-        <div className='containerPrice-group'>
-          <div className='containerPrice-item'>
-            <div className='containerPrice-info'>
-              <h4>Fecha:</h4>
-              <span>{trip?.fecha_de_incio && trip?.fecha_de_incio} - {trip?.fecha_fin && trip?.fecha_fin}</span>
-            </div>
-            <div><i className="fa-light fa-calendar-days"></i></div>
-          </div>
-          <div className='containerPrice-item'>
-            <div className='containerPrice-info'>
-              <h3>Contactanos</h3>
-              <div>
-                <h4>Email:</h4>
-                <span>contacto@trotatourism.com</span>
+        <div className='w-full flex flex-col gap-5'>
+          {trip?.tarifas?.map((tarifa, index) => {
+            return (
+              <div className='flex items-center gap-2 p-1 border-b flex-col'>
+                <div className='flex items-center gap-2 w-full flex-col md:flex-row'>
+                  {tarifa?.imagen?.url && <div className='w-full text-center md:w-1/6 flex gap-1 items-center justify-between'>
+                    <img src={tarifa?.imagen?.url} className='max-w-full object-cover' alt="" />
+                  </div>}
+                  <div className='w-full md:w-full flex flex-col'>
+                    <p className='font-bold'>{tarifa.titulo}</p>
+                    <span className='text-sm w-full md:w-2/3'>{tarifa.descripcion}</span>
+                  </div>
+                  <div className='w-full md:w-1/6 flex flex-col'>
+                    <span className='font-bold text-xl'>${new Intl.NumberFormat('en-IN').format(tarifa.precio)}</span> <span className='text-sm'>{trip?.moneda}/{trip?.unidad}</span>
+                  </div>
+                </div>
+                <form onSubmit={(e) => handeWhatsApp(e, index, tarifa)} className='w-full flex gap-5 flex-col md:flex-row my-5'>
+                  <div className='md:w-1/2'>
+                    <Input 
+                    nombre={`cantidad${index}`}
+                    funcion={handleInput} 
+                    valor={cantidad[`cantidad${index}`]} 
+                    requerido={true} 
+                    placeHolder='Cantidad' 
+                    type='number'
+                    />
+                  </div>
+                  <button className='bg-green-400 rounded p-3 w-full font-semibold'><i className="fa-brands fa-whatsapp"></i> Reservar Ahora</button>
+                </form>
               </div>
-              <div>
-                <h4>Telefono:</h4>
-                <span>(239) 555-0108</span>
-              </div>
-            </div>
-          </div>
+            )
+          })}
         </div>
-        { user.activeLogin ? 
-          <a target='_blank' href={trip?.url_wetravel && trip?.url_wetravel} className='containerPrice-btn'>Book Now</a>
-          :
-          null
-        }
-        
       </div>
   </div>
   )

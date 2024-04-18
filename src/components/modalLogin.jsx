@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../redux/userSlice'
 import FormRegister from './formRegister';
+import { useNavigate } from 'react-router-dom'
 
 const ModalLogin = ({ activeModal, closeModal }) => {
   const [formLogin, setFormLogin] = useState({})
@@ -12,18 +13,16 @@ const ModalLogin = ({ activeModal, closeModal }) => {
   const [typeForm, setTypeFaorm] = useState(true)
   const [registerSuccess, setRegisterSuccess] = useState(false)
   const [isUserCorrect, setIsUserCorrect] = useState(true);
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault()
-    axios.post('https://cms-l4tiq.ondigitalocean.app/api/auth/local', formLogin)
+    axios.post('https://cms.gstmtravel.com/api/auth/local', formLogin)
     .then(response => {
-      const data = response.data.user ? response.data.user : false
-      if (data) {
-        dispatch(loginUser({email:data.email, password:'', activeLogin: true}))
-        closeModal(false);
-      } else {
-        closeModal(false);
-      }
+      if (response.data.jwt) { 
+        dispatch(loginUser({isLoading:false,usuario:response?.data?.user,activeLogin:true}))
+          navigate('/home');
+        }     
     })
   }
 

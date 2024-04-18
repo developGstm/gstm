@@ -2,7 +2,8 @@ import React from 'react'
 import Header from '../components/header'
 import { useNavigate  } from "react-router-dom";
 
-const HeaderSecundary = ({title,subtitle,img,tipo, locacion}) => {
+const HeaderSecundary = ({title,subtitle,img,tipo,locacion}) => {
+  console.log({title,subtitle,img,tipo,locacion})
   const ciudad = JSON.parse(locacion)
   const navigate = useNavigate();
 

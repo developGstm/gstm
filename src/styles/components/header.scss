@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $blue-menuBackground;
 }
 .Header-containerMenu {
   display: flex;
@@ -146,7 +145,6 @@
 @include breakpoint('medium') {
   .Header-container {
     display: flex;
-    max-width: 1024px;
     align-items: center;
   }
 
@@ -179,8 +177,8 @@
     display: flex;
     gap: 1.5rem;
     opacity: 1;
-    align-items: center;
-    justify-content: center;
+    align-items: end;
+    justify-content: end;
     position: relative;
     width: 90%;
   }

@@ -36,7 +36,6 @@ const FormRegister = ({ codigo }) => {
         dataUser.info_user.agenciaData[0].nombreAgencia = dataUser.agencia;
         try {
           const respuesta = await axios.post('https://cms.gstmtravel.com/api/auth/local/register', dataUser);
-          console.log(respuesta);
           if (respuesta.data.jwt) { 
           dispatch(loginUser({isLoading:false,usuario:respuesta?.data?.user,activeLogin:true}))
             navigate('/home');
@@ -51,9 +50,8 @@ const FormRegister = ({ codigo }) => {
 
   return (
     <div className={ `w-full  text-black` }>
-    <div className={`w-full p-5 relative`}>
+    <div className='w-full p-5 relative max-h-80 overflow-auto'>
       <form onSubmit={ handleSubmit } className='flex flex-col gap-5'>
-
       <Input 
         nombre='nombre' 
         funcion={handleInput} 

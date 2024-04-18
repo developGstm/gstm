@@ -2,7 +2,6 @@ import React from 'react'
 import { useNavigate  } from "react-router-dom";
 
 const Destinations = ({dataDestinos}) => {
-  console.log(dataDestinos)
   const navigate = useNavigate();
   const handleDestino = (value) => {
     let url = new URL(window.location)

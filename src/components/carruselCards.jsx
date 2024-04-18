@@ -1,7 +1,6 @@
 import React from 'react'
 
 const CarruselCards = ( { data,url } ) => {
-    console.log(data)
   return (
     <div className='mt-8 grid grid-cols-1 gap-2 w-full h-full md:grid-cols-2 lg:grid-cols-4'>
        {(data && data.length > 0) && data.map(item => {

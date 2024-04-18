@@ -11,7 +11,7 @@ function Input({nombre, funcion, placeHolder ,requerido, type, valor}) {
         value={valor}
         onChange={(e) => funcion(nombre,e.target.value)}
         />
-        <label for={nombre} className="absolute cursor-text left-0 -top-3 text-sm text-[#ffd603] mx-1 px-1 peer-placeholder-shown:-z-10 peer-placeholder-shown:text-base peer-placeholder-shown:text-[#6f6d74] peer-placeholder-shown:top-3 peer-focus:z-10 peer-focus:-top-3 peer-focus:text-[#ffd603] peer-focus:text-sm transition-all bg-[#010417]">{placeHolder}</label>
+        <label for={nombre} className="absolute cursor-text left-0 -top-3 text-sm text-[#ffd603] mx-1 px-1 peer-placeholder-shown:-z-10 peer-placeholder-shown:text-base peer-placeholder-shown:text-[#6f6d74] peer-placeholder-shown:top-3 peer-focus:z-10 peer-focus:-top-3 peer-focus:text-[#ffd603] peer-focus:text-sm transition-all bg-[#fff]">{placeHolder}</label>
     </div>
   )
 }

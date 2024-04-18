@@ -64,10 +64,10 @@ const Footer = () => {
             <span className="footer-ItemServicio">Car Hire</span>
           </div>*/}
         </div>
-        <div className='footer-second'>
-        <div>©2023 by<a href="https://axioma.network/" target='_blank'> Global Supply Travel Market</a>, All rights reserved</div>
+        <div className='flex justify-between w-full p-3'>
+        <div className='flex gap-2'>©2023 by<a href="https://axioma.network/" target='_blank'> Global Supply Travel Market</a>, All rights reserved</div>
           <div>
-            <a href="#home">
+            <a href="#home" className='flex items-center gap-2  '>
               <h1>Scroll To Top</h1> 
               <i className="fa-light fa-arrow-up"></i>
             </a>

@@ -40,26 +40,21 @@ const Header = () => {
 
   return (
     <nav className='Header'>
-      <div className="Header-container">
-        <div className="Header-logo" onClick={() => navigate('/')}>
-          <img src={ logo } alt="" />
-        </div>
+      <div className="Header-container mx-auto max-w-7xl p-6 lg:px-8 w-full">
+        <img src={ logo } alt=""  className='w-20' onClick={() => navigate('/home')}/>
         <div className={ classMenu }>
           <ul className='Header-menu'>
             <a href="#home"><li className='Header-li'>Inicio</li></a>
-            <a href="#destinos"><li className='Header-li'>Destinos</li></a>
-            <a href="#servicios"><li className='Header-li'>Servicios</li></a>
-            <a href="#footer"><li className='Header-li'>Contacto</li></a>
               <div className='Header-logout logout-mobile Header-li' onClick={() => handleLogin()}>
-                <span>{user.email}</span>
+                <span>Hola, {user?.usuario?.nombre}</span>
                 <i className="fa-duotone fa-right-from-bracket"></i>
               </div>
 
-          <div className='Header-logout logout-desktop Header-li' onClick={() => handleLogin()}>
-            <span>{user.email}</span>
-            <i className="fa-duotone fa-right-from-bracket"></i>
-          </div>
-                  </ul>
+            <div className='Header-logout logout-desktop Header-li' onClick={() => handleLogin()}>
+              <span>Hola, {user?.usuario?.nombre}</span>
+              <i className="fa-duotone fa-right-from-bracket"></i>
+            </div>
+          </ul>
         </div>
         <div className={ buttonClose } onClick={ () => setActiveMenu(!activeMenu) }>
           <div></div>

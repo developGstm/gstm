@@ -49,7 +49,6 @@ function SearchEngine({ tiposServicios }) {
               <div className="Home-SearchHeader">
                 {(tiposServicios && tiposServicios.length > 0) && tiposServicios.map((servicio,index)=> {
                   const margin = (100 / tiposServicios.length) * index
-                  console.log(servicio?.attributes?.titulo)
                   return (
                     <div onClick={() => handleSelectMenu(`${margin}%`, servicio?.attributes?.titulo)}>{servicio?.attributes?.titulo === 'Tour' ? 'tours' : plurales(servicio?.attributes?.titulo)}</div>
                   )

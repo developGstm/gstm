@@ -19,7 +19,7 @@ import SearchEngine from '../components/searchEngine';
 import Faqs from '../components/faqs';
 import Capacitaciones from '../components/capacitaciones';
 import CarruselCards from '../components/carruselCards';
-
+import SectionType from '../components/sectionType'
 
 
 const Home = () => {
@@ -60,7 +60,7 @@ const Home = () => {
 ]
 
   useEffect(() => {
-    axios.get('https://cms-l4tiq.ondigitalocean.app/api/servicios?populate=*&')
+    /*axios.get('https://cms-l4tiq.ondigitalocean.app/api/servicios?populate=*&')
     .then(response => {
         const totalServices = response.data.meta.pagination.total;
         axios.get(`https://cms-l4tiq.ondigitalocean.app/api/servicios?pagination[pageSize]=${totalServices}&populate=*&`)
@@ -74,7 +74,7 @@ const Home = () => {
     axios.get('https://cms-l4tiq.ondigitalocean.app/api/tipo-servicios')
     .then(response => {
       setTiposServicios(response.data.data)
-    })
+    }) */
   }, []);
 
   const handleSendServiceFilter = (selectOption) => {
@@ -168,7 +168,6 @@ const Home = () => {
           <div className="Home-containerTitle">
             <h1>Encuentra las mejores tarifas con nosotros</h1>
             <span>Nuestras tarifas son negociadas directas con el provedor garantizando la tarifa mas baja disponible</span>
-            <button className='Home-explore' onClick={() => navigate('/destino')}>Explore Now</button>
           </div>
           {/* <SearchEngine tiposServicios={tiposServicios} /> */}
         </div>
@@ -239,14 +238,12 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <Destinations dataDestinos={dataDestinos}/>
-      <section className='container mx-auto p-10 lg:p-20'>
-        <div className='w-full mb-2 text-center lg:text-left lg:mb-0 lg:w-1/2 '>
-          <h3 className=' text-4xl lg:text-5xl font-bold'>Descubre los Tours</h3>
-          <span className='text-2xl text-green-400 font-semibold'>El destino que busques lo tenemos a tu alcance</span>
-        </div>
-        <CarruselCards data={ cards } url='/' />
-      </section>
+      <SectionType type='hotel' title={'Los lugares <span class="block text-green-400">Mas maravillosos</span>'}/>
+      <SectionType type='tour' title={'Los mejores<span class="block"><span class="text-green-400">Tours</span></span>'}/>
+      <SectionType type='transporte' title={'Nuestros<span class="block text-green-400">Transportes</span>'}/>
+      <SectionType type='concierto' title={'Los artistas <span class="block text-green-400">Favoritos</span>'}/>
+      <SectionType type='evento' title={'Descubre nuestros<span class="block text-green-400">Eventos</span>'}/>
+      <SectionType type='viaje' title={'Los lugares <span class="block text-green-400">Mas maravillosos</span>'}/>
       {/*<section className='Home-section' id="servicios">
         <div className="Home-wrapper Home-DestinationWrapper">
           <div className='Home-destinationsHeader'>
@@ -295,7 +292,6 @@ const Home = () => {
           </div>
         </div>
           </section>*/}
-      <Capacitaciones/>
       {/*<section className='Home-section Home-sectionWork'>
         <div className="Home-wrapper Home-ItWork">
           <div className='Home-ItWorkHeader'>
@@ -409,8 +405,7 @@ const Home = () => {
           </div>
         </div>
       </section> */}
-      <Faqs/>
-      <section className='Home-section Home-NewsLatter'>
+      {/*<section className='Home-section Home-NewsLatter'>
         <form className="Home-wrapper Home-NewsLatterContainer" onSubmit={(e) => handleNewsLatter(e)}>
           <div className='Home-NewsLatterHeader' >
             <h1>Your Travel Journey Starts Here</h1>
@@ -427,7 +422,7 @@ const Home = () => {
             <img src={ palm } alt="" />
           </div>
         </form>
-      </section>
+      </section> */}
       <Footer />
     </div>
   );

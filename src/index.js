@@ -31,6 +31,13 @@ root.render(
               <Route path={ "/about/:id" }  element={ <Auth><About/></Auth> }/>
               <Route path={ "/landingTour/:packageId" }  element={ <Auth><LandingTour/></Auth> }/>
               <Route path={ "/destino" }  element={ <Auth><Destino/></Auth> }/>
+              <Route path="home/hoteles/:url" element={<LandingTour/>} />
+              <Route path="home/tours/:url" element={<LandingTour/>} />
+              <Route path="home/tours/:url" element={<LandingTour/>} />
+              <Route path="home/transportes/:url" element={<LandingTour/>} />
+              <Route path="home/conciertos/:url" element={<LandingTour/>} />
+              <Route path="home/eventos/:url" element={<LandingTour/>} />
+              <Route path="home/viajes/:url" element={<LandingTour/>} />
           </Routes>
         </BrowserRouter>
       </PersistGate>

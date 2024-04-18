@@ -18,7 +18,6 @@ const CoomingSoon = () => {
       let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
       let seconds = Math.floor((distance % (1000 * 60)) / (1000));
-      console.log(hours)
       setDay(days >= 10 ? days : `0${days}`)
       setHours(hours >= 10 ? hours : `0${hours}`)
       setMinutes(minutes >= 10 ? minutes : `0${minutes}`)
