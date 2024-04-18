@@ -1,18 +1,7 @@
-import React, { Fragment, useState,useEffect } from 'react'
-import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
-import {
-  Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  XMarkIcon,
-} from '@heroicons/react/24/outline'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import React, { useState,useEffect } from 'react'
 import fondo from '../assets/fondo.png'
-import logo from '../assets/gstm-imagotipo.png'
 import iata from '../assets/IITA.png'
 import us from '../assets/ustravel.png'
-import ccra from '../assets/ccra.png'
 import helicoptero from '../assets/helicoptero.png'
 import deportes from '../assets/deportes.png'
 import conciertos from '../assets/conciertos.png'
@@ -23,25 +12,8 @@ import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps
 import Footer from '../components/footer'
 import ParquesTematicos from '../components/parquesTematicos'
 import Iconos from '../components/iconos';
-import ModalLogin from '../components/modalLogin'
 import axios from 'axios'
-
-const products = [
-  { name: 'Deportes', description: 'Los mejores eventos deportivos del mundo', href: '#', icon: ChartPieIcon },
-  { name: 'Conciertos', description: 'Tus cantates favoritos', href: '#', icon: CursorArrowRaysIcon },
-  { name: 'Cruceros', description: 'Una nueva manera de explorar el mundo', href: '#', icon: FingerPrintIcon },
-]
-
-const callsToAction = [
-  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-  { name: 'Contact sales', href: '#', icon: PhoneIcon },
-]
-
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
-
+import Menu from '../components/nav'
 
 const cordenadas = [
   {lon:-88.35041848015022, lat: 20.019650322154078 },
@@ -118,186 +90,9 @@ function LandingHome(props) {
     })
   }, []);
 
-
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
-
-  const [openModal, setOpenModal] = useState(false);
-
-  function handleModal(isOpen) {
-    if( isOpen ) {
-      setOpenModal(true)
-    }else{
-      setOpenModal(false)
-    }
-    
-  }
-
   return (
     <div>
-      <ModalLogin activeModal={openModal} closeModal={handleModal} />
-      <header className="bg-white">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-          <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
-              <img className="w-24" src={ logo } alt="" />
-            </a>
-          </div>
-          <div className="flex lg:hidden">
-            <button
-              type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-              onClick={() => setMobileMenuOpen(true)}
-            >
-              <span className="sr-only">Open main menu</span>
-              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-            </button>
-          </div>
-          <Popover.Group className="hidden lg:flex lg:gap-x-12">
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-              Nosotros
-            </a>
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-              Destinos
-            </a>
-            <Popover className="relative">
-              <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-                Experiencias
-                <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
-              </Popover.Button>
-
-              <Transition
-                as={Fragment}
-                enter="transition ease-out duration-200"
-                enterFrom="opacity-0 translate-y-1"
-                enterTo="opacity-100 translate-y-0"
-                leave="transition ease-in duration-150"
-                leaveFrom="opacity-100 translate-y-0"
-                leaveTo="opacity-0 translate-y-1"
-              >
-                <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
-                  <div className="p-4">
-                    {products.map((item) => (
-                      <div
-                        key={item.name}
-                        className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
-                      >
-                        <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                          <item.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
-                        </div>
-                        <div className="flex-auto">
-                          <a href={item.href} className="block font-semibold text-gray-900">
-                            {item.name}
-                            <span className="absolute inset-0" />
-                          </a>
-                          <p className="mt-1 text-gray-600">{item.description}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </Popover.Panel>
-              </Transition>
-            </Popover>
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-              Disney
-            </a>
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-              Universal
-            </a>
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-              Parques tematicos
-            </a>
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-              Blog de viaje
-            </a>
-          </Popover.Group>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a onClick={() => handleModal(true)} href="#" className="text-sm font-semibold leading-6 text-gray-900">
-              Log In / Sign Up <span aria-hidden="true">&rarr;</span>
-            </a>
-          </div>
-        </nav>
-        <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-          <div className="fixed inset-0 z-10" />
-          <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
-                <img
-                  className="w-16"
-                  src={ logo }
-                  alt=""
-                />
-              </a>
-              <button
-                type="button"
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="sr-only">Close menu</span>
-                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-              </button>
-            </div>
-            <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-gray-500/10">
-                <div className="space-y-2 py-6">
-                  <Disclosure as="div" className="-mx-3">
-                    {({ open }) => (
-                      <>
-                        <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                          Product
-                          <ChevronDownIcon
-                            className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
-                            aria-hidden="true"
-                          />
-                        </Disclosure.Button>
-                        <Disclosure.Panel className="mt-2 space-y-2">
-                          {[...products, ...callsToAction].map((item) => (
-                            <Disclosure.Button
-                              key={item.name}
-                              as="a"
-                              href={item.href}
-                              className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                            >
-                              {item.name}
-                            </Disclosure.Button>
-                          ))}
-                        </Disclosure.Panel>
-                      </>
-                    )}
-                  </Disclosure>
-                  <a
-                    href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    Features
-                  </a>
-                  <a
-                    href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    Marketplace
-                  </a>
-                  <a
-                    href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    Company
-                  </a>
-                </div>
-                <div className="py-6">
-                  <a
-                    onClick={() => handleModal(true)}
-                    href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    Log in
-                  </a>
-                </div>
-              </div>
-            </div>
-          </Dialog.Panel>
-        </Dialog>
-      </header>
+      <Menu/>
       <section>
         <div className="mx-auto max-w-7xl p-6 lg:px-8 flex item-center justify-between flex-col lg:flex-row">
           <div className='w-100 lg:w-1/2 flex flex-col justify-center'>
@@ -351,26 +146,46 @@ function LandingHome(props) {
         <div className='flex items-center justify-center'><img className='w-52' src={ us } alt="" /></div>
         </div>
       </section>
-      <section className="py-10 section-map">
-      <h1 className='mx-auto max-w-7xl px-6 lg:px-8 text-3xl font-extrabold relative'>Experiencias en cualquier lugar del mundo</h1>
-        <div className="mx-auto lg:max-w-5xl px-6 lg:px-8">
-        <ComposableMap>
-          <Geographies geography="/features.json">
-            {({ geographies }) =>
-              geographies.map((geo) => (
-                <Geography key={geo.rsmKey} geography={geo} />
-              ))
-            }
-          </Geographies>
-          {cordenadas.map(item=> {
-            const random = Math.floor((Math.random() * (4 - 2 + 1)) + 2)
-            return (
-              <Marker coordinates={[item.lon, item.lat]}>
-                <circle r={2} fill="#3abb70" />
-              </Marker>
-            )
-          })}
-        </ComposableMap>
+      <section className='relative mb-20'>
+        <div className="absolute w-full h-full z-10">
+          <div className="mx-auto max-w-7xl p-6 lg:px-8 flex flex-col justify-center h-full gap-5">
+            <div className='lg:w-1/2'><h1 className='text-4xl md:text-5xl font-extrabold relative'>Experiencias en cualquier lugar del <span className='text-[#3abb70]'>mundo</span></h1></div>
+            <div className="grid grid-cols-1 gap-10 lg:gap-2 lg:grid-cols-3 w-full lg:w-1/2 text-black">
+              <div className='flex flex-col text-center gap-3'>
+                <h1 className='text-5xl font-extrabold'>20+</h1>
+                <span className='text-sm font-medium'>Años de Experiencia</span>
+              </div>
+              <div className='flex flex-col text-center gap-3'>
+                <h1 className='text-5xl font-extrabold'>10M+</h1>
+                <span className='text-sm font-medium'>Viajeros Felices</span>
+              </div>
+              <div className='flex flex-col text-center gap-3'>
+                <h1 className='text-5xl font-extrabold'>100+</h1>
+                <span className='text-sm font-medium'>Destinos Unicos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-end min-h-screen items-end">
+          <div className='section-map w-full lg:w-1/2 relative'>
+            <ComposableMap>
+              <Geographies geography="/features.json">
+                {({ geographies }) =>
+                  geographies.map((geo) => (
+                    <Geography key={geo.rsmKey} geography={geo} />
+                  ))
+                }
+              </Geographies>
+              {cordenadas.map(item=> {
+                return (
+                  <Marker coordinates={[item.lon, item.lat]}>
+                    <circle r={2} fill="#ffd603" />
+                  </Marker>
+                )
+              })}
+            </ComposableMap>
+            <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-t from-[#fff] from-10%"></div>
+          </div>
         </div>
       </section>
       <section className=' px-8'>

@@ -16,7 +16,7 @@ const ParquesTematicos = () => {
   return (
     <div>
     <section id="destinos"  className='container mx-auto lg:p-10'>
-      <div className='overflow-hidden  gap-3 lg:gap-3 sm:columns-2 lg:columns-3 px-10 [&>div:not(:first-child)]:mt-3 lg:[&>div:not(:first-child)]:mt-3'> 
+      <div className='overflow-hidden  gap-3 lg:gap-3 sm:columns-2 lg:columns-3 [&>div:not(:first-child)]:mt-3 lg:[&>div:not(:first-child)]:mt-3'> 
             <div className="w-full lg:w-50 relative h-200 rounded-lg bg-gray-200 overflow-hidden shadow ">
               <img className='w-full h-full' src={legoland} alt="" />
               <div className=' top-0 absolute rounded-br-lg text-white w-40 bg-yellow-400 text-center'>

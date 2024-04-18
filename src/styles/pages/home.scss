@@ -1211,6 +1211,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 }
 
+.section-map {
+  overflow: hidden;
+}
+.section-map svg {
+  width: 200%;
+}
+
 @include breakpoint('medium') { 
   .coomingsoonWrapper {
     h1 {
@@ -1218,6 +1225,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     }
   }
  }
+ .section-map svg {
+  width: 120%;
+}
 
  .section-map {
   svg {
