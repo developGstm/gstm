@@ -3,7 +3,7 @@ import img from '../assets/login.jpg'
 import axios from 'axios'
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../redux/userSlice'
-
+import FormRegister from './formRegister';
 
 const ModalLogin = ({ activeModal, closeModal }) => {
   const [formLogin, setFormLogin] = useState({})
@@ -21,31 +21,6 @@ const ModalLogin = ({ activeModal, closeModal }) => {
       if (data) {
         dispatch(loginUser({email:data.email, password:'', activeLogin: true}))
         closeModal(false);
-      } else {
-        closeModal(false);
-      }
-    })
-  }
-
-  const handleSignUp = (e) => {
-    e.preventDefault()
-    axios.post('https://cms-l4tiq.ondigitalocean.app/api/auth/local/register', formSignUp, {
-      headers: {
-        "Content-Type": "application/json",
-      }
-    })
-    .then(response => {
-      const data = response.data.user ? response.data.user : false
-      if (data) {
-        dispatch(loginUser({email:data.email, password:'', activeLogin: true}))
-        setRegisterSuccess(true)
-        setTimeout(() => {
-          setRegisterSuccess(false)
-          setTypeFaorm(true)
-          closeModal(false);
-          window.location = '/home';
-        }, 1000);
-
       } else {
         closeModal(false);
       }
@@ -91,7 +66,7 @@ const ModalLogin = ({ activeModal, closeModal }) => {
       );
     } else {
       return (
-        <div className='ModalLogin-Wrapper'>
+        <div className='ModalLogin-Wrapper z-50'>
           <div className="ModalLogin-Container">
             <div className="ModalLogin-close">
               <i className="fa-regular fa-xmark" onClick={() =>  closeModalHandle()}></i>
@@ -105,28 +80,10 @@ const ModalLogin = ({ activeModal, closeModal }) => {
             <div className='ModalLogin-Cover' style={{backgroundImage:` linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${img}")`}}>
               <span>Registrate</span>
             </div>
-            <form className='ModalLogin-ContainerInputs' onSubmit={(e) => handleSignUp(e)}>
-              <div>
-                <input type="text" placeholder='Nombre' required onChange={(e) => setSignUp({...formSignUp, nombre:e.target.value})}/>
-              </div>
-              <div>
-                <input type="text" placeholder='Nombre de tu agencia' required onChange={(e) => setSignUp({...formSignUp, nombre_agencia:e.target.value})}/>
-              </div>
-              <div>
-                <input type="text" placeholder='Telefono' required onChange={(e) => setSignUp({...formSignUp, telefono:e.target.value})}/>
-              </div>
-              <div>
-                <input type="email" placeholder='Email' required onChange={(e) => setSignUp({...formSignUp, email:e.target.value, username:e.target.value})}/>
-              </div>
-              <div>
-                <input type="password" placeholder='Contraseña' required onChange={(e) => setSignUp({...formSignUp, password:e.target.value})}/>
-              </div>
-              <div>
-                <button>
-                  Registrar
-                </button>
-              </div>
-            </form>
+            <div className='w-full'>
+              <FormRegister/>
+            </div>
+           
           </div>
         </div>
       )

@@ -175,7 +175,7 @@ function LandingHome(props) {
                 leaveFrom="opacity-100 translate-y-0"
                 leaveTo="opacity-0 translate-y-1"
               >
-                <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
+                <Popover.Panel className="absolute -left-8 top-full z-5 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                   <div className="p-4">
                     {products.map((item) => (
                       <div
@@ -218,8 +218,8 @@ function LandingHome(props) {
           </div>
         </nav>
         <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-          <div className="fixed inset-0 z-10" />
-          <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div className="fixed inset-0 z-5" />
+          <Dialog.Panel className="fixed inset-y-0 right-0 z-5 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
                 <img
@@ -490,9 +490,9 @@ function LandingHome(props) {
           return (
             <a href={ item.attributes.url }>
             <article className='pt-80 pb-8 px-8 rounded-2xl bg-red-50 overflow-hidden flex flex-col justify-end relative isolate'>
-              <img className='w-full h-full object-cover absolute -z-10 inset-0'
+              <img className='w-full h-full object-cover absolute -z-5 inset-0'
               src={ item.attributes.img.data.attributes.url } alt="" />
-              <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#2e8b88]"></div>
+              <div className="absolute inset-0 -z-5 bg-gradient-to-t from-[#2e8b88]"></div>
               <div className="flex items-center justify-center gap-1 overflow-hiden flex-wrap text-sm text-white leading-7">
                 <span>{item.attributes.fecha}</span>
                 <div className='flex items-center gap-x-2.5'>
