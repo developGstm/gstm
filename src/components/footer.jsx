@@ -1,19 +1,29 @@
 import React from 'react'
 import logo from '../assets/logo-2.png';
 const Footer = () => {
+
+  const handleWhatsApp = (e) => {
+    if (e) {
+      e.preventDefault()
+    }
+    const text = `Hola me gustaria hablar con un representante, ¿podrían ayudar?`
+    window.open(`https://wa.me/17024085453?text=${text.replace(/ /g, "%20")}`)
+  }
+
   return (
     <section className='footer' id="footer">
       <div className="footer-wrapper">
         <div className='footer-body'>
           <div className='footer-item'>
             <h1>Contactanos</h1>
-            <div className='footer-ItemContacto footer-itemContactNumber'>
+            <div className='footer-ItemContacto footer-itemContactNumber gap-2'>
               <span>Soporte al cliente</span>
-              <h1><a href="tel:+1 (725) 228-6406">+1 (725) 228-6406</a></h1>
+              <h1 className='flex items-center p-1 bg-gray-200 font-bold rounded-lg gap-2'><i className="fa-light fa-phone-volume"></i> <a href="tel:+1 (725) 228-6406">+1 (725) 228-6406</a></h1>
+              <button className='flex items-center p-1 bg-green-400 text-white font-bold rounded-lg gap-2' onClick={() => handleWhatsApp()}><i className="fa-brands fa-whatsapp"></i> +1 (702) 408-5453</button>
             </div>
             <div className='footer-ItemContacto footer-itemContactNumber'>
               <span>Dirección</span>
-              <h1>1550 W Horizon Ridge Pkwy Henderson Nevada, 89012</h1>
+              <h1>871 Coronado Center Drive Suite 200 Las Vegas NV 80052</h1>
             </div>
           </div>
           <div className='footer-item'>

@@ -246,7 +246,7 @@ function LandingHome(props) {
             <div className='absolute z-20 top-0 left-0 h-full w-full flex justify-end md:justify-center items-end p-5 md:pr-10 flex-col gap-5'>
               <div className='flex flex-col'>
                 <h1 className='text-3xl md:text-5xl text-white font-bold text-center'>Disfruta de los mejores precio</h1>
-                <span className='text-base md:text-right text-center'>Incia sesion o Registrate y obten todo nuestro calago</span>
+                <span className='text-base md:text-right text-center'>Incia sesion o Registrate y obten todo nuestro catalogo</span>
               </div>
               <button onClick={()=> handleModal(true)} className='bg-green-400 rounded p-3 w-full md:w-1/3'>Inicia Sesion / Registrate</button>
             </div>
@@ -416,7 +416,6 @@ function LandingHome(props) {
       <section id="destinos"  className='container mx-auto lg:py-10'>
         <h1 className='mx-auto max-w-7xl px-6 lg:px-8 text-3xl font-extrabold relative'>Te enseñamos a viajar</h1>
         <div className='mx-auto max-w-7xl p-6 lg:px-8 grid lg:grid-cols-3 gap-4'> 
-        
         {(blogs && blogs.length > 0) && blogs.map(item => {
           return (
             <a href={ item.attributes.url }>
