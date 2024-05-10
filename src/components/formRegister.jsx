@@ -101,7 +101,7 @@ const FormRegister = ({ codigo }) => {
         type='password'
         />
         <label className="p-2 border rounded-lg w-full border-[#081358] mb-5 flex items-center gap-3"><input type="checkbox" required="true" onInvalid={(e) => e.target.setCustomValidity('Acepta nuestros terminos y condiciones')}/><span className="font-semibold">Acepto <a href={`${window.location}assets/TerminosyCondiciones.pdf`} className="border-b"  target="_blank">Terminos y Condiciones</a></span></label>
-        <button type="submit" className='bg-green-400 rounded p-3' >Registrarse</button>
+        <button type="submit" className='bg-[#c42ee8] rounded p-3' >Registrarse</button>
       </form>
     </div>
   </div>

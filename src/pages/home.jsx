@@ -196,54 +196,12 @@ const Home = () => {
           </div>
         </div>
       </section> */}
-      <section className='Home-section'>
-        <div className="Home-wrapper Home-wrapperBeneficios">
-          <h1 className='Home-titleGrupos'>Vea algunos beneficios de unirse a nosotros</h1>
-          <div className='Home-beneficiosWrapper'>
-            <div className='Home-beneficiosContainer'>
-              <div className='Home-beneficio'>
-                <div className="Home-beneficioIcon">
-                  <span>1</span>
-                </div>
-                <div className="Home-beneficioText">
-                  <h1>Más de 20 años de experiencia</h1>
-                  <span>Estamos orgullosos de nuestra experiencia en la industria, asi que podemos guiarte a ti y tu cliente en la mejor experiencia de viaje.</span>
-                </div>
-              </div>
-              <div className='Home-beneficio'>
-                <div className="Home-beneficioIcon">
-                  <span>2</span>
-                </div>
-                <div className="Home-beneficioText">
-                  <h1>Ofertas y descuentos exclusivos</h1>
-                  <span>Contamos asociaciones con Atracciones, Tours ,Hoteles y otros proveedores de viajes.</span>
-                </div>
-              </div>
-              <div className='Home-beneficio'>
-                <div className="Home-beneficioIcon">
-                  <span>3</span>
-                </div>
-                <div className="Home-beneficioText">
-                  <h1>Tranquilidad y soporte</h1>
-                  <span>Brindamos tranquilidad al ofrecer apoyo y asistencia en todo momento.</span>
-                </div>
-              </div>
-            </div>
-            <div className='Home-beneficioImagenWrapper'>
-              <div className="Home-beneficioImagenContainer">
-                <img src={ disneyImagen1 } alt="" />
-                <img src={ disneyImagen2 } alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <SectionType type='hotel' title={'Los lugares <span class="block text-green-400">Mas maravillosos</span>'}/>
-      <SectionType type='tour' title={'Los mejores<span class="block"><span class="text-green-400">Tours</span></span>'}/>
-      <SectionType type='transporte' title={'Nuestros<span class="block text-green-400">Transportes</span>'}/>
-      <SectionType type='concierto' title={'Los artistas <span class="block text-green-400">Favoritos</span>'}/>
-      <SectionType type='evento' title={'Descubre nuestros<span class="block text-green-400">Eventos</span>'}/>
-      <SectionType type='viaje' title={'Los lugares <span class="block text-green-400">Mas maravillosos</span>'}/>
+      <SectionType type='hotel' title={'Los lugares <span class="block text-[#c42ee8]">Mas maravillosos</span>'}/>
+      <SectionType type='tour' title={'Los mejores<span class="block"><span class="text-[#c42ee8]">Tours</span></span>'}/>
+      <SectionType type='transporte' title={'Nuestros<span class="block text-[#c42ee8]">Transportes</span>'}/>
+      <SectionType type='concierto' title={'Los artistas <span class="block text-[#c42ee8]">Favoritos</span>'}/>
+      <SectionType type='evento' title={'Descubre nuestros<span class="block text-[#c42ee8]">Eventos</span>'}/>
+      <SectionType type='viaje' title={'Los lugares <span class="block text-[#c42ee8]">Mas maravillosos</span>'}/>
       {/*<section className='Home-section' id="servicios">
         <div className="Home-wrapper Home-DestinationWrapper">
           <div className='Home-destinationsHeader'>

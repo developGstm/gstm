@@ -139,8 +139,8 @@ function LandingHome(props) {
       <header className="bg-white">
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
-              <img className="w-24" src={ logo } alt="" />
+            <a href="/" className="-m-1.5 p-1.5">
+              <img className="w-56 md:w-80" src={ logo } alt="" />
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -165,7 +165,7 @@ function LandingHome(props) {
             <div className="flex items-center justify-between">
               <button className="-m-1.5 p-1.5">
                 <img
-                  className="w-16"
+                  className="w-56 md:w-80"
                   src={ logo }
                   alt=""
                 />
@@ -198,8 +198,8 @@ function LandingHome(props) {
         <div className="mx-auto max-w-7xl p-6 lg:px-8 flex item-center justify-between flex-col lg:flex-row">
           <div className='w-100 lg:w-1/2 flex flex-col justify-center'>
             <h1 className="text-3xl font-extrabold sm:text-5xl">
-              <strong className="lg:block font-extrabold"> Global Supply Travel Market</strong>
-              <span className='text-base block text-[#3abb70]'>Tu mejor socio en viajes internacionales</span>
+              <strong className="lg:block font-extrabold"> Destiny Travel Group</strong>
+              <span className='text-base block text-[#c42ee8]'>Tu mejor socio en viajes internacionales</span>
             </h1>
             <p className="w-auto mt-4 text-1xl lg:max-w-lg">
              Somos un Tour Operador receptivo enfocado en el mercado mexicano, latinoamericano y español, con más de 2,500 agencias afiliadas y más de 9,000 productos de contratación directa, garantizando el precio más bajo en el mercado. Más de 25 años de experiencia en la industria nos respaldan, con un servicio al cliente experto que te llevará de la mano en tus ventas y en tu idioma.
@@ -211,10 +211,9 @@ function LandingHome(props) {
         </div>
       </section>
       <section className='px-6 lg:px-20'>
-        
         <h3 className='mx-auto max-w-7xl  lg:px-8 text-3xl font-extrabold relative'>
-              <span className='text-base block text-[#3abb70]'>Descubriendo nuestra singularidad</span>
-              Por qué somos diferentes
+          <span className='text-base block text-[#c42ee8]'>Descubriendo nuestra singularidad</span>
+          Por qué somos diferentes
         </h3>
         <Iconos/>
       </section>
@@ -244,11 +243,11 @@ function LandingHome(props) {
         <div className="mx-auto max-w-7xl p-6 lg:px-8 flex flex-col justify-center h-full gap-5">
           <div className="relative">
             <div className='absolute z-20 top-0 left-0 h-full w-full flex justify-end md:justify-center items-end p-5 md:pr-10 flex-col gap-5'>
-              <div className='flex flex-col'>
+              <div className='flex flex-col gap-2'>
                 <h1 className='text-3xl md:text-5xl text-white font-bold text-center'>Disfruta de los mejores precio</h1>
-                <span className='text-base md:text-right text-center'>Incia sesion o Registrate y obten todo nuestro catalogo</span>
+                <span className='text-base md:text-right text-center'>Inicia sesión o Regístrate y obtén todo nuestro catálogo.</span>
               </div>
-              <button onClick={()=> handleModal(true)} className='bg-green-400 rounded p-3 w-full md:w-1/3'>Inicia Sesion / Registrate</button>
+              <button onClick={()=> handleModal(true)} className='bg-[#c42ee8] rounded p-3 w-full md:w-1/3 text-white'>Inicia Sesion / Registrate</button>
             </div>
             <div className='bg-black absolute top-0 left-0 w-full h-full rounded-lg z-10  md:hidden opacity-10'></div>
             <img src="./assets/login.jpg" alt="" className='h-96 rounded-lg object-left md:object-cover'/>
@@ -258,14 +257,14 @@ function LandingHome(props) {
       <section className='py-10'>
         <h1 className='mx-auto max-w-7xl px-6 lg:px-8 text-3xl font-extrabold relative'>Nuestras afiliaciones</h1>
         <div className='mx-auto max-w-7xl p-6 lg:px-8 grid lg:grid-cols-3 gap-4'>
-        <div className='flex items-center justify-center'><img className='w-52' src={ iata } alt="" /></div>
-        <div className='flex items-center justify-center'><img className='w-52' src={ us } alt="" /></div>
+          <div className='flex items-center'><img className='w-52' src={ iata } alt="" /></div>
+          <div className='flex items-center'><img className='w-52' src={ us } alt="" /></div>
         </div>
       </section>
-      <section className='relative mb-20'>
-        <div className="absolute w-full h-full z-10">
-          <div className="mx-auto max-w-7xl p-6 lg:px-8 flex flex-col justify-center h-full gap-5">
-            <div className='lg:w-1/2'><h1 className='text-4xl md:text-5xl font-extrabold relative'>Experiencias en cualquier lugar del <span className='text-[#3abb70]'>mundo</span></h1></div>
+      <section className='relative my-10'>
+        <div className="absolute w-full z-10">
+          <div className="mx-auto max-w-7xl p-6 lg:px-8 flex flex-col justify-center md:justify-start h-full gap-5">
+            <div className='lg:w-1/2'><h1 className='text-4xl md:text-5xl font-extrabold relative'>Experiencias en cualquier lugar del <span className='text-[#c42ee8]'>mundo</span></h1></div>
             <div className="grid grid-cols-1 gap-10 lg:gap-2 lg:grid-cols-3 w-full lg:w-1/2 text-black">
               <div className='flex flex-col text-center gap-3'>
                 <h1 className='text-5xl font-extrabold'>20+</h1>
@@ -282,7 +281,7 @@ function LandingHome(props) {
             </div>
           </div>
         </div>
-        <div className="flex justify-end min-h-screen items-end">
+        <div className="flex justify-end md:items-start min-h-screen md:min-h-[auto] items-end">
           <div className='section-map w-full lg:w-1/2 relative'>
             <ComposableMap>
               <Geographies geography="/features.json">
@@ -295,7 +294,7 @@ function LandingHome(props) {
               {cordenadas.map(item=> {
                 return (
                   <Marker coordinates={[item.lon, item.lat]}>
-                    <circle r={2} fill="#ffd603" />
+                    <circle r={2} fill="#c42ee8" />
                   </Marker>
                 )
               })}
@@ -308,7 +307,7 @@ function LandingHome(props) {
         <div className="mx-auto max-w-7xl lg:px-8 flex item-center justify-between flex-col lg:flex-row">
           <div className='w-100 lg:w-1/2 flex flex-col justify-center'>
             <h1 className="text-3xl font-extrabold sm:text-5xl">
-              <span className='text-base block text-[#3abb70]'>La vida son de experiencias</span>
+              <span className='text-base block text-[#c42ee8]'>La vida son de experiencias</span>
               Lo importante para nosotros son las 
               <strong className="lg:block font-extrabold">experiencias de viaje </strong>
             </h1>
@@ -328,7 +327,7 @@ function LandingHome(props) {
           </div>
           <div className='w-100  lg:w-1/2 flex flex-col justify-center '>
             <h1 className="text-3xl font-extrabold sm:text-5xl">
-              <span className='text-base block text-[#3abb70]'>Una forma diferente de disfrutar el deporte</span>
+              <span className='text-base block text-[#c42ee8]'>Una forma diferente de disfrutar el deporte</span>
               Los eventos de Deportes  
               <strong className="lg:block font-extrabold">Mas importantes del mundo </strong>
             </h1>
@@ -342,7 +341,7 @@ function LandingHome(props) {
         <div className="mx-auto max-w-7xl lg:px-8 flex item-center justify-between flex-col lg:flex-row">
           <div className='w-100 lg:w-1/2 flex flex-col justify-center'>
             <h1 className="text-3xl font-extrabold sm:text-5xl">
-              <span className='text-base block text-[#3abb70]'>La musica se vive</span>
+              <span className='text-base block text-[#c42ee8]'>La musica se vive</span>
               Disfruta de tu 
               <strong className="lg:block font-extrabold">cantante favorito</strong>
             </h1>
@@ -362,7 +361,7 @@ function LandingHome(props) {
           </div>
           <div className='w-100 lg:w-1/2 flex flex-col justify-center'>
             <h1 className="text-3xl font-extrabold sm:text-5xl">
-              <span className='text-base block text-[#3abb70]'>Conoce el mundo en el mar</span>
+              <span className='text-base block text-[#c42ee8]'>Conoce el mundo en el mar</span>
               Esas vacaciones en 
               <strong className="lg:block font-extrabold">altamar que siempre  soñaste</strong>
             </h1>
@@ -376,7 +375,7 @@ function LandingHome(props) {
         <div className="mx-auto max-w-7xl lg:px-8 flex item-center justify-between flex-col lg:flex-row">
           <div className='w-100 lg:w-1/2 flex flex-col justify-center'>
             <h1 className="text-3xl font-extrabold sm:text-5xl">
-              <span className='text-base block text-[#3abb70]'>El magico mundo de</span>
+              <span className='text-base block text-[#c42ee8]'>El magico mundo de</span>
               Disney a tu alcance
             </h1>
             <p className="w-auto mt-4 text-1xl lg:max-w-lg">
@@ -395,7 +394,7 @@ function LandingHome(props) {
           </div>
           <div className='w-100 lg:w-1/2 flex flex-col justify-center'>
             <h1 className="text-3xl font-extrabold sm:text-5xl">
-              <span className='text-base block text-[#3abb70]'>Universal Studio</span>
+              <span className='text-base block text-[#c42ee8]'>Universal Studio</span>
               El parque temático más épico del mundo.
             </h1>
             <p className="w-auto mt-4 text-1xl lg:max-w-lg">
@@ -406,7 +405,7 @@ function LandingHome(props) {
       </section>
       <section className='py-10'>
         <h1 className='mx-auto max-w-7xl px-6 lg:px-8 text-3xl font-extrabold relative'>
-          <span className='text-base block text-[#3abb70]'>Un diversidad de</span>
+          <span className='text-base block text-[#c42ee8]'>Un diversidad de</span>
           Parques temáticos
         </h1>
         <div className="mx-auto max-w-7xl p-6 lg:px-8 flex item-center justify-between flex-col lg:flex-row">
@@ -419,11 +418,11 @@ function LandingHome(props) {
         {(blogs && blogs.length > 0) && blogs.map(item => {
           return (
             <a href={ item.attributes.url }>
-            <article className='h-full pt-80 pb-8 px-8 rounded-2xl bg-red-50 overflow-hidden flex flex-col justify-stretch items-stretch relative '>
+            <article className='h-full min-h-96 pb-8 px-8 rounded-2xl bg-red-50 overflow-hidden flex flex-col justify-stretch items-stretch relative'>
               <img className='w-full h-full object-cover absolute -z-5 inset-0'
               src={ item.attributes.img.data.attributes.url } alt="" />
-              <div className="absolute inset-0 -z-5 bg-gradient-to-t from-[#3abb70]"></div>
-              <div className="flex items-center justify-center gap-1 overflow-hiden flex-wrap text-sm text-white leading-7 z-30">
+              <div className="absolute -z-5 bg-gradient-to-t from-[#c42ee8] h-1/2 bottom-0 left-0 w-full"></div>
+              <div className="flex items-center justify-center gap-1 overflow-hiden flex-wrap text-sm text-white z-30 left-0 bottom-0 absolute p-5">
                 <span>{item?.attributes?.fecha}</span>
                 <div className='flex items-center gap-x-2.5 flex-col'>
                   <h2 className='text-xl font-semibold'>{item?.attributes?.titulo}</h2>

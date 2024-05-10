@@ -41,7 +41,7 @@ const Header = () => {
   return (
     <nav className='Header'>
       <div className="Header-container mx-auto max-w-7xl p-6 lg:px-8 w-full">
-        <img src={ logo } alt=""  className='w-20' onClick={() => navigate('/home')}/>
+        <img src={ logo } alt=""  className='w-56 md:w-72' onClick={() => navigate('/home')}/>
         <div className={ classMenu }>
           <ul className='Header-menu'>
             <a href="#home"><li className='Header-li'>Inicio</li></a>

@@ -49,7 +49,7 @@ function SectionType({type, title, clase}) {
                         <h1 className='text-xl font-bold'>{ item?.titulo }</h1>
                         <div className='w-full flex justify-between text-sm'>
                           <span className='flex gap-1 items-center'>
-                            <i className="fa-sharp fa-light fa-location-dot text-green-400"></i>
+                            <i className="fa-sharp fa-light fa-location-dot text-[#c42ee8]"></i>
                             { item?.locacion?.locality }
                           </span>
                           <span className='flex gap-1 text-sm'>

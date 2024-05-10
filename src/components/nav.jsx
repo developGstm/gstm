@@ -12,8 +12,8 @@ const Nav = ( {Fontcolor} ) => {
       setMenu(!menu);
   }
   return (
-    <nav className='Nav'>
-        <div className='Nav-logo'><img src={logo} alt="" /></div>
+    <nav className='Nav bg-red-50'>
+        <div><img src={logo} alt='' className='w-56 md:w-80' /></div>
         <div className='Nav-icon' onClick={() => handleMenu()}><i className="fa-solid fa-bars"></i></div>
         <ul className={menu ? ' Nav-ul Nav-ulIshidden ' : 'Nav-ul' }>
            <a href="#"><li className='Nav-btnClose' onClick={() => handleMenu()}>x</li></a>

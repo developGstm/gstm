@@ -47,7 +47,7 @@ const ContainerPrice = ({trip}) => {
                     type='number'
                     />
                   </div>
-                  <button className='bg-green-400 rounded p-3 w-full font-semibold'><i className="fa-brands fa-whatsapp"></i> Reservar Ahora</button>
+                  <button className='rounded p-3 w-full font-semibold border-2 border-[#c42ee8]'><i className="fa-brands fa-whatsapp"></i> Reservar Ahora</button>
                 </form>
               </div>
             )

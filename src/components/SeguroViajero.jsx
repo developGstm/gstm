@@ -5,7 +5,7 @@ const SeguroViajero = () => {
     <section className='pt-20 pb-20 mb-20 bg-gray-100'>
           <div className='px-10 lg:px-20'>
           <h2 className="font-semibold dark:text-white lg:text-4xl text-3xl lg:leading-9 md:leading-7 leading-9 text-gray-800 mb-2">Cuidamos de ti</h2>
-          <span className='text-2xl text-green-400 font-semibold mb-10'>Obeten uno de nuestros seguros y viaja sin preocupacion</span>
+          <span className='text-2xl text-[#c42ee8] font-semibold mb-10'>Obeten uno de nuestros seguros y viaja sin preocupacion</span>
           <div className='lg:px-10'>
             <div className=' w-full md:w-1/3 rounded-xl bg-white pb-5'>
                 <div className='w-ful bg-blue-600 text-center h-40 flex justify-center items-center mb-5'>

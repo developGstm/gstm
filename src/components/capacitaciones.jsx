@@ -10,12 +10,12 @@ const Capacitaciones = () => {
         </div>
         <div className='flex w-full lg:w-1/2 overflow-x-auto'>
           <ul className='flex items-center justify-between w-full'>
-          <li className='cursor-pointer mx-1 border-b-2 border-yellow-400'> Destino </li>
-          <li className='cursor-pointer mx-1 hover:border-b-2 border-yellow-400'>Producto</li>
-          <li className='cursor-pointer mx-1 hover:border-b-2 border-yellow-400'>Ventas</li>
-          <li className='cursor-pointer mx-1 hover:border-b-2 border-yellow-400'>Asesoria </li>
-          <li className='cursor-pointer mx-1 hover:border-b-2 border-yellow-400'>Contable</li>
-          <li className='cursor-pointer mx-1 hover:border-b-2 border-yellow-400'>Ver todas</li>
+          <li className='cursor-pointer mx-1 border-b-2 border-[#c42ee8]'> Destino </li>
+          <li className='cursor-pointer mx-1 hover:border-b-2 border-[#c42ee8]'>Producto</li>
+          <li className='cursor-pointer mx-1 hover:border-b-2 border-[#c42ee8]'>Ventas</li>
+          <li className='cursor-pointer mx-1 hover:border-b-2 border-[#c42ee8]'>Asesoria </li>
+          <li className='cursor-pointer mx-1 hover:border-b-2 border-[#c42ee8]'>Contable</li>
+          <li className='cursor-pointer mx-1 hover:border-b-2 border-[#c42ee8]'>Ver todas</li>
           </ul>
         </div>
       </div>
@@ -25,10 +25,10 @@ const Capacitaciones = () => {
                     <img src="https://www.viajesboletin.com/wp-content/uploads/2023/09/viajandofest.jpg" alt="" />
                 </div>
                 <div className="w-1/2 p-3 flex flex-col justify-evenly bg-white">
-                  <h6 className='text-green-400 font-semibold text-center text-2xl'>Explorando Destinos: Curso de Capacitación en Turismo</h6>
+                  <h6 className='text-[#c42ee8] font-semibold text-center text-2xl'>Explorando Destinos: Curso de Capacitación en Turismo</h6>
                   <p className=' text-justify'>Descubre los secretos de los destinos turísticos más emocionantes del mundo y conviértete en un experto en ofrecer experiencias...</p>
-                  <p>Categoria:<span className='  text-yellow-400'>Destinos</span></p>
-                  <p>Nivel:<span className='  text-yellow-400'>Basico</span></p>
+                  <p>Categoria:<span className='  text-[#c42ee8]'>Destinos</span></p>
+                  <p>Nivel:<span className='  text-[#c42ee8]'>Basico</span></p>
                   <p className='flex'>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
                       <path d="M5.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H6a.75.75 0 0 1-.75-.75V12ZM6 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H6ZM7.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H8a.75.75 0 0 1-.75-.75V12ZM8 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H8ZM9.25 10a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H10a.75.75 0 0 1-.75-.75V10ZM10 11.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V12a.75.75 0 0 0-.75-.75H10ZM9.25 14a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H10a.75.75 0 0 1-.75-.75V14ZM12 9.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V10a.75.75 0 0 0-.75-.75H12ZM11.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H12a.75.75 0 0 1-.75-.75V12ZM12 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H12ZM13.25 10a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H14a.75.75 0 0 1-.75-.75V10ZM14 11.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V12a.75.75 0 0 0-.75-.75H14Z" />
@@ -40,7 +40,7 @@ const Capacitaciones = () => {
                     </svg>
                     <span>13:00</span>
                   </p>
-                  <div className=' bg-yellow-400 p-3 rounded text-center cursor-pointer'>Ver más</div>
+                  <div className=' bg-[#c42ee8] p-3 rounded text-center cursor-pointer'>Ver más</div>
                 </div>
             </div>
             <div className='border border-inherit w-3/6 flex rounded-lg overflow-hidden'>
@@ -48,10 +48,10 @@ const Capacitaciones = () => {
                     <img src="https://eclibertad.com/wp-content/uploads/2020/03/2-Tecnicas-efectivas-en-Ventas-600x600.jpg" alt="" />
                 </div>
                 <div className="w-1/2 p-3 flex flex-col justify-evenly bg-white">
-                  <h6 className='text-green-400 font-semibold text-center text-2xl'>Ventas Exitosas en Turismo: Paso a Paso hacia el Éxito</h6>
+                  <h6 className='text-[#c42ee8] font-semibold text-center text-2xl'>Ventas Exitosas en Turismo: Paso a Paso hacia el Éxito</h6>
                   <p className=' text-justify'>Domina las técnicas y estrategias fundamentales para aumentar tus ventas en la industria turística...</p>
-                  <p>Categoria:<span className='  text-yellow-400'>Ventas</span></p>
-                  <p>Nivel:<span className='  text-yellow-400'>Intermedio</span></p>
+                  <p>Categoria:<span className='  text-[#c42ee8]'>Ventas</span></p>
+                  <p>Nivel:<span className='  text-[#c42ee8]'>Intermedio</span></p>
                   <p className='flex'>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
                       <path d="M5.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H6a.75.75 0 0 1-.75-.75V12ZM6 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H6ZM7.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H8a.75.75 0 0 1-.75-.75V12ZM8 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H8ZM9.25 10a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H10a.75.75 0 0 1-.75-.75V10ZM10 11.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V12a.75.75 0 0 0-.75-.75H10ZM9.25 14a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H10a.75.75 0 0 1-.75-.75V14ZM12 9.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V10a.75.75 0 0 0-.75-.75H12ZM11.25 12a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H12a.75.75 0 0 1-.75-.75V12ZM12 13.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V14a.75.75 0 0 0-.75-.75H12ZM13.25 10a.75.75 0 0 1 .75-.75h.01a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75H14a.75.75 0 0 1-.75-.75V10ZM14 11.25a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75h.01a.75.75 0 0 0 .75-.75V12a.75.75 0 0 0-.75-.75H14Z" />
@@ -63,7 +63,7 @@ const Capacitaciones = () => {
                     </svg>
                     <span>14:00</span>
                   </p>
-                  <div className=' bg-yellow-400 p-3 rounded text-center cursor-pointer'>Ver más</div>
+                  <div className=' bg-[#c42ee8] p-3 rounded text-center cursor-pointer'>Ver más</div>
                 </div>
             </div>
         </div>
