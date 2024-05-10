@@ -49,7 +49,7 @@ const Footer = () => {
           </div>
         </div>
         <div className='flex justify-between w-full p-3'>
-        <div className='flex gap-1'><a href="https://www.destinytravel.ai/" target='_blank'>©2023 by Destiny Travel Group, All rights reserved</a></div>
+        <div className='flex gap-1'><a href="https://www.destinytravel.ai/" target='_blank'>©2023 by DESTINY B2B, All rights reserved</a></div>
         </div>
       </div>
     </section>
