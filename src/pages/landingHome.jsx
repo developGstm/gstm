@@ -155,7 +155,7 @@ function LandingHome(props) {
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <a onClick={() => handleModal(true)} href="#" className="text-sm font-semibold leading-6 text-gray-900">
-              Inciar sesion / Registarse <span aria-hidden="true">&rarr;</span>
+              Iniciar sesión/Registrarse <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
         </nav>
@@ -186,7 +186,7 @@ function LandingHome(props) {
                     onClick={() => handleModal(true)}
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
-                    Inciar sesion / Registarse
+                    Iniciar sesión/Registrarse / Registarse
                   </button>
                 </div>
               </div>
@@ -198,7 +198,7 @@ function LandingHome(props) {
         <div className="mx-auto max-w-7xl p-6 lg:px-8 flex item-center justify-between flex-col lg:flex-row">
           <div className='w-100 lg:w-1/2 flex flex-col justify-center'>
             <h1 className="text-3xl font-extrabold sm:text-5xl">
-              <strong className="lg:block font-extrabold"> Destiny Travel Group</strong>
+              <strong className="lg:block font-extrabold"> Destiny B2B</strong>
               <span className='text-base block text-[#c42ee8]'>Tu mejor socio en viajes internacionales</span>
             </h1>
             <p className="w-auto mt-4 text-1xl lg:max-w-lg">
