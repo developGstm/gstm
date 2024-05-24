@@ -35,7 +35,7 @@ const ModalLogin = ({ activeModal, closeModal }) => {
   if (activeModal) {
     if (typeForm) {
       return (
-        <div className='ModalLogin-Wrapper z-50'>
+        <div className='w-full h-full fixed left-0 top-0 flex justify-center items-center z-50 bg-white bg-opacity-50'>
           <div className="ModalLogin-Container">
             <div className="ModalLogin-close">
               <i className="fa-regular fa-xmark" onClick={() =>  closeModalHandle()}></i>

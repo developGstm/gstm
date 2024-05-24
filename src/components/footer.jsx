@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <section>
       <div className="mx-auto max-w-7xl p-6 lg:px-8">
-        <div className='cursor-pointer fixed w-[60px] bg-[#c42ee8] aspect-square rounded-full right-0 bottom-0 mr-3 mb-3 text-white text-3xl flex items-center justify-center z-50' onClick={() => handleWhatsApp()}>
+        <div className='cursor-pointer fixed w-[60px] bg-[#c42ee8] aspect-square rounded-full right-0 bottom-0 mr-3 mb-3 text-white text-3xl flex items-center justify-center z-20' onClick={() => handleWhatsApp()}>
           <i class="fa-brands fa-whatsapp"></i>
           <div className="absolute w-[200px] right-0 mr-[65px] bg-[#c42ee8] rounded-full text-base h-[60px] flex items-center justify-center button-support-liquid">
             <span>¿Necesitas ayuda?</span>
